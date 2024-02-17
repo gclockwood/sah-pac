@@ -1,10 +1,55 @@
+---
+const faq = [
+ {
+    question: "How do I get started with your SaaS platform?",
+    answer: "Getting started is straightforward. Simply navigate to the 'Get Started' or 'Sign Up' section on our website, and follow the on-screen instructions to create your new account.",
+  },
+  {
+    question: "What payment options are available?",
+    answer: "We support a variety of payment methods including major credit cards, debit cards, PayPal, and in some cases, bank transfers. Select your preferred option during the subscription process.",
+  },
+  {
+    question: "How do you protect my data?",
+    answer: "Data protection is our top priority. We employ advanced encryption and security practices to safeguard your personal and professional information, ensuring compliance with global data protection regulations.",
+  },
+  {
+    question: "Can I cancel my service subscription?",
+    answer: "Yes, you are free to cancel your subscription at any moment. Simply access your account settings and navigate to the 'Manage Subscription' area to cancel.",
+  },
+  {
+    question: "Is there a money-back guarantee?",
+    answer: "Absolutely, we offer a 30-day money-back guarantee. If our service doesn’t meet your expectations within the first 30 days, you're eligible for a full refund.",
+  },
+  {
+    question: "How can I reach customer support?",
+    answer: "Our customer support team is available via email, live chat, and phone. Visit our 'Support' or 'Contact Us' page for more details and to get in touch.",
+  },
+  {
+    question: "What are the technical requirements?",
+    answer: "Our platform is accessible on most devices with internet connectivity and a modern web browser. For specific software or OS requirements, please refer to our 'Technical Requirements' section.",
+  },
+  {
+    question: "Is it possible to upgrade my subscription plan?",
+    answer: "Definitely. You can upgrade your plan anytime through your account dashboard under the 'Subscription' or 'Plan' settings, where you’ll find options for different subscription levels.",
+  },
+  {
+    question: "Do you offer special pricing for non-profits?",
+    answer: "Yes, we support non-profit organizations with special pricing plans. Reach out to our sales team for more details and eligibility criteria.",
+  },
+  {
+    question: "What's your customer support response time?",
+    answer: "Our goal is to respond to all inquiries within 24 hours. Our dedicated support team works around the clock to ensure you receive the assistance you need, when you need it.",
+  }
+];
+---
+
 <section>
   <div class="max-w-screen-xl px-8 py-24 mx-auto md:px-12 lg:px-32">
     <div class="max-w-2xl">
       <span
         class="font-mono text-xs font-medium tracking-tight text-blue-600 uppercase"
       >
-       FAQ
+        FAQ
       </span>
       <p class="mt-8 text-4xl font-semibold tracking-tighter text-blue-950">
         Frquently asked questions <span
@@ -16,58 +61,23 @@
         Explore a wide range of financial tools, features, and support for your
         financial goals and questions
       </p>
-
     </div>
     <div class="flex flex-col gap-2 mt-12">
-      <details class="p-4 bg-white rounded-lg shadow-box shadow-gray-500/20">
-        <summary  class="font-mono text-sm tracking-tighter uppercase cursor-pointer focus:text-blue-700">How do I sign up for your services?</summary>
-        <p class="pl-2 mt-8 text-sm text-gray-700">Signing up is easy. Just click on the "Sign Up" button on our homepage, and follow the instructions to create your account.</p>
-      </details>
+      {
+        faq.map((faq) => (
+          <>
 
-      <details class="p-4 bg-white rounded-lg shadow-box shadow-gray-500/20">
-        <summary  class="font-mono text-sm tracking-tighter uppercase cursor-pointer focus:text-blue-700">What payment methods do you accept?</summary>
-        <p class="pl-2 mt-8 text-sm text-gray-700">We accept all major credit cards, debit cards, and PayPal for payments. You can choose your preferred method during the checkout process.</p>
-      </details>
+            <details class="p-4 bg-white rounded-lg shadow-box shadow-gray-500/20">
+              <summary class="font-mono text-sm tracking-tighter uppercase cursor-pointer focus:text-blue-700">
+                {faq.question}
+              </summary>
+              <p class="pl-2 mt-8 text-sm text-gray-700">{faq.answer}</p>
+            </details>
+          </>
+        ))
+      }
 
-      <details class="p-4 bg-white rounded-lg shadow-box shadow-gray-500/20">
-        <summary  class="font-mono text-sm tracking-tighter uppercase cursor-pointer focus:text-blue-700">Is my personal information safe with you?</summary>
-        <p class="pl-2 mt-8 text-sm text-gray-700">Yes, we take data security seriously. Your personal information is encrypted and stored securely, and we never share it with third parties.</p>
-      </details>
 
-      <details class="p-4 bg-white rounded-lg shadow-box shadow-gray-500/20">
-        <summary  class="font-mono text-sm tracking-tighter uppercase cursor-pointer focus:text-blue-700">What if I need to cancel my subscription?</summary>
-        <p class="pl-2 mt-8 text-sm text-gray-700">You can cancel your subscription at any time by logging into your account and going to the "Subscription" section. Follow the prompts to cancel your subscription.</p>
-      </details>
-
-      <details class="p-4 bg-white rounded-lg shadow-box shadow-gray-500/20">
-        <summary  class="font-mono text-sm tracking-tighter uppercase cursor-pointer focus:text-blue-700">Do you offer a money-back guarantee?</summary>
-        <p class="pl-2 mt-8 text-sm text-gray-700">Yes, we offer a 30-day money-back guarantee. If you're not satisfied with our services, you can request a full refund within 30 days of your purchase.</p>
-      </details>
-
-      <details class="p-4 bg-white rounded-lg shadow-box shadow-gray-500/20">
-        <summary  class="font-mono text-sm tracking-tighter uppercase cursor-pointer focus:text-blue-700">How can I contact your customer support?</summary>
-        <p class="pl-2 mt-8 text-sm text-gray-700">You can reach our customer support team through our "Contact Us" page or by emailing support@yourcompany.com. We're here to assist you 24/7.</p>
-      </details>
-
-      <details class="p-4 bg-white rounded-lg shadow-box shadow-gray-500/20">
-        <summary  class="font-mono text-sm tracking-tighter uppercase cursor-pointer focus:text-blue-700">What are the system requirements for using your software?</summary>
-        <p class="pl-2 mt-8 text-sm text-gray-700">Our software is compatible with Windows, macOS, and Linux operating systems. You'll need a modern web browser to access our services.</p>
-      </details>
-
-      <details class="p-4 bg-white rounded-lg shadow-box shadow-gray-500/20">
-        <summary  class="font-mono text-sm tracking-tighter uppercase cursor-pointer focus:text-blue-700">Can I upgrade my plan at any time?</summary>
-        <p class="pl-2 mt-8 text-sm text-gray-700">Yes, you can upgrade your plan at any time. Simply log in to your account and go to the "Subscription" section to choose a higher-tier plan.</p>
-      </details>
-
-      <details class="p-4 bg-white rounded-lg shadow-box shadow-gray-500/20">
-        <summary  class="font-mono text-sm tracking-tighter uppercase cursor-pointer focus:text-blue-700">Do you offer discounts for non-profit organizations?</summary>
-        <p class="pl-2 mt-8 text-sm text-gray-700">Yes, we have special pricing and discounts for non-profit organizations. Please contact our sales team for more information.</p>
-      </details>
-
-      <details class="p-4 bg-white rounded-lg shadow-box shadow-gray-500/20">
-        <summary  class="font-mono text-sm tracking-tighter uppercase cursor-pointer focus:text-blue-700">What is your response time for support requests?</summary>
-        <p class="pl-2 mt-8 text-sm text-gray-700">We aim to respond to support requests within 24 hours. Our team is dedicated to providing timely and helpful assistance.</p>
-      </details>
     </div>
   </div>
 </section>

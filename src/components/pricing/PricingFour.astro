@@ -26,14 +26,16 @@
           class="block w-full px-8 py-2 text-xs font-medium text-blue-900 transition border border-transparent rounded-full"
           @click="duration = 'monthly'"
           :class="duration == 'monthly' ? 'bg-gray-100 border text-blue-900 ' : ''"
-          type="button">Monthly</button
+          type="button"
+          aria-label="Get started with plan-name">Monthly</button
         >
         <button
           id="annual-pricing-button"
           class="block w-full px-8 py-2 text-xs font-medium text-blue-900 transition border border-transparent rounded-full"
           @click="duration = 'annual'"
           :class="duration == 'annual' ? 'bg-gray-100 border text-blue-900 ' : ''"
-          type="button">Annual</button
+          type="button"
+          aria-label="Get started with plan-name">Annual</button
         >
       </div>
     </div>
@@ -176,7 +178,7 @@
         <div class="w-full mt-8">
           <a
             class="flex items-center justify-center h-10 px-4 py-2 text-sm font-semibold text-gray-500 transition-all duration-200 bg-white border border-gray-300 rounded-full hover:text-blue-700 focus:ring-2 shadow-button shadow-gray-500/5 focus:ring-blue-950 focus:ring-offset-2 ring-offset-gray-200 hover:shadow-none"
-            href="#">Get started</a
+            href="#_">Get started</a
           >
         </div>
       </section>
@@ -314,7 +316,7 @@
         <div class="w-full mt-8">
           <a
             class="flex items-center justify-center h-10 px-4 py-2 text-sm font-semibold text-gray-500 transition-all duration-200 bg-white border border-gray-300 rounded-full hover:text-blue-700 focus:ring-2 shadow-button shadow-gray-500/5 focus:ring-blue-950 focus:ring-offset-2 ring-offset-gray-200 hover:shadow-none"
-            href="#">Get started</a
+            href="#_">Get started</a
           >
         </div>
       </section>
@@ -453,7 +455,7 @@
         <div class="w-full mt-8">
           <a
             class="flex items-center justify-center h-10 px-4 py-2 text-sm font-semibold text-gray-500 transition-all duration-200 bg-white border border-gray-300 rounded-full hover:text-blue-700 focus:ring-2 shadow-button shadow-gray-500/5 focus:ring-blue-950 focus:ring-offset-2 ring-offset-gray-200 hover:shadow-none"
-            href="#">Get started</a
+            href="#_">Get started</a
           >
         </div>
       </section>
@@ -1587,6 +1589,7 @@
             <th class="w-1/4 px-2 py-4">
               <button
                 type="button"
+                aria-label="Get started with plan-name"
                 class="flex items-center justify-center h-10 px-4 py-2 text-sm font-semibold text-gray-500 transition-all duration-200 bg-white border border-gray-300 rounded-full hover:text-blue-700 focus:ring-2 shadow-button shadow-gray-500/5 focus:ring-blue-950 focus:ring-offset-2 ring-offset-gray-200 hover:shadow-none w-full"
                 >Get started</button
               >
@@ -1594,6 +1597,7 @@
             <th class="w-1/4 px-2 py-4">
               <button
                 type="button"
+                aria-label="Get started with plan-name"
                 class="flex items-center justify-center h-10 px-4 py-2 text-sm font-semibold text-white transition-all duration-200 rounded-full bg-gradient-to-b from-blue-500 to-indigo-600 hover:to-indigo-700 shadow-button shadow-blue-600/50 focus:ring-2 focus:ring-blue-950 focus:ring-offset-2 ring-offset-gray-200 hover:shadow-non w-full"
                 >Get started</button
               >
@@ -1601,6 +1605,7 @@
             <th class="w-1/4 px-2 py-4">
               <button
                 type="button"
+                aria-label="Get started with plan-name"
                 class="flex items-center justify-center h-10 px-4 py-2 text-sm font-semibold text-gray-500 transition-all duration-200 bg-white border border-gray-300 rounded-full hover:text-blue-700 focus:ring-2 shadow-button shadow-gray-500/5 focus:ring-blue-950 focus:ring-offset-2 ring-offset-gray-200 hover:shadow-none w-full"
                 >Get started</button
               >

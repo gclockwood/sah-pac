@@ -1,10 +1,10 @@
 <section class="relative overflow-hidden">
   <div
-    class="flex flex-col items-center pt-12 pb-6 lg:flex-row relative h-screen"
+    class="flex flex-col items-center pt-12 pb-6 lg:flex-row relative h-screen max-w-screen-xl mx-auto"
   >
     <div class="max-w-xl px-8 md:pl-12 lg:pl-44 lg:pb-0">
-      <p class="text-4xl font-semibold tracking-tighter text-blue-950 lg:text-7xl">
-        Sing in to <span class="lg:block md:text-transparent md:bg-clip-text md:bg-gradient-to-r from-blue-500 to-indigo-600 py-2">Alfred</span>
+      <p class="text-4xl font-semibold tracking-tighter text-blue-950 lg:text-8xl text-balance">
+        Sing in to <span class=" md:text-transparent md:bg-clip-text md:bg-gradient-to-r from-blue-500 to-indigo-600 py-2">Alfred</span>
       </p>
 
       <form action="#" class="mt-12">
@@ -87,7 +87,8 @@
           </div>
 
           <div class="col-span-full">
-            <label name="company" class="sr-only"> Email</label><input
+            <label for="email" class="sr-only"> Email</label><input
+              id="email"
               type="email"
               class="block w-full h-12 px-4 py-3 placeholder-gray-500 bg-white border-0 rounded-lg appearance-none text-blue-500 focus:border-blue-500 focus:bg-white focus:outline-none focus:ring-blue-500 focus:ring-inset text-xs"
               placeholder="Your password "

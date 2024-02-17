@@ -4,31 +4,32 @@
   >
     <div class="max-w-xl px-8 lg:pb-0 mx-auto">
       <p
-        class="text-4xl font-semibold tracking-tighter text-blue-950 lg:text-7xl"
+        class="text-4xl font-semibold tracking-tighter text-blue-950 lg:text-8xl text-balance text-center"
       >
         Reset your <span
-          class="lg:block md:text-transparent md:bg-clip-text md:bg-gradient-to-r from-blue-500 to-indigo-600 py-2"
+          class="md:text-transparent md:bg-clip-text md:bg-gradient-to-r from-blue-500 to-indigo-600 py-2"
           >Password</span
         >
       </p>
       <form action="#" class="mt-12">
         <div class="flex-col flex gap-1 mt-8">
           <div class="col-span-full">
-            <label name="password" class="sr-only"> Pssword</label><input
+            <label for="password" class="sr-only">Password</label>
+            <input
+              id="password"
               type="password"
               class="block w-full h-12 px-4 py-3 placeholder-gray-500 bg-white border-0 rounded-lg appearance-none text-blue-500 focus:border-blue-500 focus:bg-white focus:outline-none focus:ring-blue-500 focus:ring-inset text-xs"
-              placeholder="New password "
-
+              placeholder="New password"
             />
           </div>
           <div class="col-span-full">
-            <label name="confirm-password" class="sr-only">
-              Pssword</label
+            <label for="confirm-password" class="sr-only">
+              Confirm Password</label
             ><input
+              id="confirm-password"
               type="password"
               class="block w-full h-12 px-4 py-3 placeholder-gray-500 bg-white border-0 rounded-lg appearance-none text-blue-500 focus:border-blue-500 focus:bg-white focus:outline-none focus:ring-blue-500 focus:ring-inset text-xs"
               placeholder="Confirm new password "
-
             />
           </div>
         </div>
@@ -52,8 +53,3 @@
     </div>
   </div>
 </section>
-
-<h1 class="mt-8 text-4xl font-semibold tracking-tighter text-blue-950 md:text-6xl">
-  Innovating financial
-  <span class="md:block">solutions for tomorrow</span>
-</h1>

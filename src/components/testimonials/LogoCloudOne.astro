@@ -1,4 +1,54 @@
-
+---
+const logos = [
+  {
+    logo: "/brands/1.svg",
+    alt: "#_",
+  },
+  {
+    logo: "/brands/2.svg",
+    alt: "#_",
+  },
+  {
+    logo: "/brands/3.svg",
+    alt: "#_",
+  },
+  {
+    logo: "/brands/4.svg",
+    alt: "#_",
+  },
+  {
+    logo: "/brands/5.svg",
+    alt: "#_",
+  },
+  {
+    logo: "/brands/6.svg",
+    alt: "#_",
+  },{
+    logo: "/brands/1.svg",
+    alt: "#_",
+  },
+  {
+    logo: "/brands/2.svg",
+    alt: "#_",
+  },
+  {
+    logo: "/brands/3.svg",
+    alt: "#_",
+  },
+  {
+    logo: "/brands/4.svg",
+    alt: "#_",
+  },
+  {
+    logo: "/brands/5.svg",
+    alt: "#_",
+  },
+  {
+    logo: "/brands/6.svg",
+    alt: "#_",
+  },
+];
+---
 <section>
     <div class="relative py-12 mx-auto overflow-hidden overflow-x-hidden 2xl:max-w-screen-xl">
       <div class="grid justify-between w-full">
@@ -14,12 +64,14 @@
       <div
         class="relative flex items-center gap-4 opacity-50 animate-marqueeLeft whitespace-nowrap"
       >
-        <img src="/brands/1.svg" alt="logo" />
-        <img src="/brands/2.svg" alt="logo" />
-        <img src="/brands/3.svg" alt="logo" />
-        <img src="/brands/4.svg" alt="logo" />
-        <img src="/brands/5.svg" alt="logo" />
-        <img src="/brands/6.svg" alt="logo" />
+       {
+          logos.map((logos) => (
+            <>
+              <img  src={logos.logo} alt={logos.logo} />
+            </>
+          ))
+        }
+
       </div>
     </div>
 </section>

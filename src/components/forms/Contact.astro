@@ -51,7 +51,7 @@ const features = [
                   <span class="sr-only">Address</span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    class="icon icon-tabler icon-tabler-map-pin text-blue-700 size-4 text-blue-700"
+                    class="icon icon-tabler icon-tabler-map-pin text-blue-700 size-4"
                     viewBox="0 0 24 24"
                     stroke-width="2"
                     stroke="currentColor"
@@ -73,7 +73,7 @@ const features = [
                   <span class="sr-only">Telephone</span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    class="icon icon-tabler icon-tabler-device-mobile text-blue-700 size-4 text-blue-700"
+                    class="icon icon-tabler icon-tabler-device-mobile text-blue-700 size-4"
                     viewBox="0 0 24 24"
                     stroke-width="2"
                     stroke="currentColor"
@@ -100,7 +100,7 @@ const features = [
                   <span class="sr-only">Email</span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    class="icon icon-tabler icon-tabler-mail text-blue-700 size-4 text-blue-700"
+                    class="icon icon-tabler icon-tabler-mail text-blue-700 size-4"
                     viewBox="0 0 24 24"
                     stroke-width="2"
                     stroke="currentColor"
@@ -137,8 +137,9 @@ const features = [
                 type="text"
                 name="first_name"
                 autocomplete="given-name"
-                required=""
                 placeholder="Your name"
+                aria-placeholder="Your name"
+                required
                 class="block w-full h-12 px-4 py-3 placeholder-gray-500 bg-gray-100 border-0 rounded-lg appearance-none text-blue-500 focus:border-blue-500 focus:bg-white focus:outline-none focus:ring-blue-500 focus:ring-inset text-xs"
               />
             </div>
@@ -149,8 +150,9 @@ const features = [
                 type="text"
                 name="last_name"
                 autocomplete="family-name"
-                required=""
                 placeholder="Last name"
+                aria-placeholder="Last name"
+                required
                 class="block w-full h-12 px-4 py-3 placeholder-gray-500 bg-gray-100 border-0 rounded-lg appearance-none text-blue-500 focus:border-blue-500 focus:bg-white focus:outline-none focus:ring-blue-500 focus:ring-inset text-xs"
               />
             </div>
@@ -159,6 +161,7 @@ const features = [
                 id="company_name"
                 type="text"
                 placeholder="Company name"
+                aria-placeholder="Company name"
                 class="block w-full h-12 px-4 py-3 placeholder-gray-500 bg-gray-100 border-0 rounded-lg appearance-none text-blue-500 focus:border-blue-500 focus:bg-white focus:outline-none focus:ring-blue-500 focus:ring-inset text-xs"
               />
             </div>
@@ -167,10 +170,11 @@ const features = [
                 <label for="comment" class="sr-only">Add your comment</label>
                 <div>
                   <textarea
-                    rows="4"
-                    name="comment"
                     id="comment"
+                    name="comment"
                     placeholder="Your message"
+                    aria-placeholder="Your message"
+                    rows="4"
                     class="block w-full px-4 py-3 placeholder-gray-500 bg-gray-100 border-0 rounded-lg appearance-none text-blue-500 focus:border-blue-500 focus:bg-white focus:outline-none focus:ring-blue-500 focus:ring-inset text-xs"
                   ></textarea>
                 </div>
@@ -191,7 +195,7 @@ const features = [
                 id="remember-me"
                 name="remember-me"
                 type="checkbox"
-                class="size-4 text-blue-700 rounded-full text-blue-500 focus:ring-blue-500 focus:ring-inset border-blue-500"
+                class="size-4 rounded-full text-blue-500 focus:ring-blue-500 focus:ring-inset border-blue-500"
               /><label
                 for="remember-me"
                 class="block ml-2 text-xs font-medium leading-tight text-blue-900"

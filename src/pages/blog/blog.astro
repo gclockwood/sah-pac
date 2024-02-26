@@ -29,7 +29,7 @@ const tags = [...new Set(allPosts.map((post) => post.data.tags).flat())];
             name="email-address"
             id="email-address"
             autocomplete="email"
-            required=""
+            required
             class="block w-full h-10 px-4 py-2 text-sm text-blue-700 border border-transparent appearance-none rounded-xl lg:rounded-full bg-gray-50 placeholder-gray-700 focus:border-gray-500 focus:bg-transparent focus:outline-none focus:ring-indigo-300 sm:text-sm"
             placeholder="Enter your email"
           />
@@ -83,7 +83,7 @@ const tags = [...new Set(allPosts.map((post) => post.data.tags).flat())];
           }
         </div>
       </div>
-    
+
     </div>
   </section>
 </BaseLayout>

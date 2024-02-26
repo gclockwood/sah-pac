@@ -10,7 +10,7 @@
         class="mt-8 text-4xl font-semibold tracking-tighter text-blue-950 md:text-6xl"
       >
         We are about to land on <span
-          class="lg:block  lg:text-transparent lg:bg-clip-text lg:bg-gradient-to-r from-blue-500 to-indigo-600 lg:py-2 "
+          class="lg:block lg:text-transparent lg:bg-clip-text lg:bg-gradient-to-r from-blue-500 to-indigo-600 lg:py-2"
           >your screen anytime soon</span
         >
       </h1>
@@ -24,13 +24,14 @@
       >
         <label for="email-address" class="sr-only">Email address</label>
         <input
+          id="email-address"
           type="email"
           name="email-address"
-          id="email-address"
           autocomplete="email"
-          required=""
-          class="block w-full h-10 px-4 py-2 text-sm text-blue-700 border border-transparent appearance-none rounded-xl lg:rounded-full bg-gray-50 placeholder-gray-700 focus:border-gray-500 focus:bg-transparent focus:outline-none focus:ring-indigo-300 sm:text-sm"
           placeholder="Enter your email"
+          aria-placeholder="Enter your email"
+          required
+          class="block w-full h-10 px-4 py-2 text-sm text-blue-700 border border-transparent appearance-none rounded-xl lg:rounded-full bg-gray-50 placeholder-gray-700 focus:border-gray-500 focus:bg-transparent focus:outline-none focus:ring-indigo-300 sm:text-sm"
         />
         <div class="mt-2 sm:ml-2 sm:mt-0 sm:flex-shrink-0">
           <button

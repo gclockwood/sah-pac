@@ -3,15 +3,20 @@
     class="flex flex-col items-center pt-12 pb-6 lg:flex-row relative h-screen max-w-screen-xl mx-auto"
   >
     <div class="max-w-xl px-8 md:pl-12 lg:pl-44 lg:pb-0">
-      <p class="text-4xl font-semibold tracking-tighter text-blue-950 lg:text-8xl text-balance">
-        Sing in to <span class=" md:text-transparent md:bg-clip-text md:bg-gradient-to-r from-blue-500 to-indigo-600 py-2">Alfred</span>
+      <p
+        class="text-4xl font-semibold tracking-tighter text-blue-950 lg:text-8xl text-balance"
+      >
+        Sing in to <span
+          class="md:text-transparent md:bg-clip-text md:bg-gradient-to-r from-blue-500 to-indigo-600 py-2"
+          >Alfred</span
+        >
       </p>
 
       <form action="#" class="mt-12">
         <div class="flex flex-row items-center gap-2 mt-10">
           <button
             type="button"
-            class="flex items-center justify-center h-10  w-full  transition-all duration-200 bg-white border border-gray-300 rounded-full    focus:ring-2 shadow-button shadow-gray-500/5 focus:ring-blue-950 focus:ring-offset-2 ring-offset-gray-200 hover:shadow-none"
+            class="flex items-center justify-center h-10 w-full transition-all duration-200 bg-white border border-gray-300 rounded-full focus:ring-2 shadow-button shadow-gray-500/5 focus:ring-blue-950 focus:ring-offset-2 ring-offset-gray-200 hover:shadow-none"
           >
             <svg
               fill="none"
@@ -31,7 +36,7 @@
           >
           <button
             type="button"
-            class="flex items-center justify-center h-10  w-full text-sm font-semibold text-gray-500 transition-all duration-200 bg-white border border-gray-300 rounded-full    focus:ring-2 shadow-button shadow-gray-500/5 focus:ring-blue-950 focus:ring-offset-2 ring-offset-gray-200 hover:shadow-none"
+            class="flex items-center justify-center h-10 w-full text-sm font-semibold text-gray-500 transition-all duration-200 bg-white border border-gray-300 rounded-full focus:ring-2 shadow-button shadow-gray-500/5 focus:ring-blue-950 focus:ring-offset-2 ring-offset-gray-200 hover:shadow-none"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -52,7 +57,7 @@
           >
           <button
             type="button"
-            class="flex items-center justify-center h-10  w-full text-sm font-semibold text-gray-500 transition-all duration-200 bg-white border border-gray-300 rounded-full    focus:ring-2 shadow-button shadow-gray-500/5 focus:ring-blue-950 focus:ring-offset-2 ring-offset-gray-200 hover:shadow-none"
+            class="flex items-center justify-center h-10 w-full text-sm font-semibold text-gray-500 transition-all duration-200 bg-white border border-gray-300 rounded-full focus:ring-2 shadow-button shadow-gray-500/5 focus:ring-blue-950 focus:ring-offset-2 ring-offset-gray-200 hover:shadow-none"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -80,8 +85,9 @@
               type="text"
               name="first_name"
               autocomplete="given-name"
-              required=""
               placeholder="Your name"
+              aria-placeholder="Your name"
+              required
               class="block w-full h-12 px-4 py-3 placeholder-gray-500 bg-white border-0 rounded-lg appearance-none text-blue-500 focus:border-blue-500 focus:bg-white focus:outline-none focus:ring-blue-500 focus:ring-inset text-xs"
             />
           </div>
@@ -90,43 +96,48 @@
             <label for="email" class="sr-only"> Email</label><input
               id="email"
               type="email"
-              class="block w-full h-12 px-4 py-3 placeholder-gray-500 bg-white border-0 rounded-lg appearance-none text-blue-500 focus:border-blue-500 focus:bg-white focus:outline-none focus:ring-blue-500 focus:ring-inset text-xs"
               placeholder="Your password "
+              aria-placeholder="Your password "
               value="********"
+              class="block w-full h-12 px-4 py-3 placeholder-gray-500 bg-white border-0 rounded-lg appearance-none text-blue-500 focus:border-blue-500 focus:bg-white focus:outline-none focus:ring-blue-500 focus:ring-inset text-xs"
             />
           </div>
         </div>
         <div class="col-span-full mt-2">
           <button
             type="submit"
-            class="flex items-center justify-center h-10 px-4 py-2 text-sm  font-semibold text-white duration-200 rounded-full bg-gradient-to-b from-blue-500 to-blue-600 hover:to-blue-700 shadow-button shadow-blue-600/50 focus:ring-2 focus:ring-blue-950 focus:ring-offset-2 ring-offset-gray-200 hover:shadow-none w-full"
+            class="flex items-center justify-center h-10 px-4 py-2 text-sm font-semibold text-white duration-200 rounded-full bg-gradient-to-b from-blue-500 to-blue-600 hover:to-blue-700 shadow-button shadow-blue-600/50 focus:ring-2 focus:ring-blue-950 focus:ring-offset-2 ring-offset-gray-200 hover:shadow-none w-full"
           >
             Submit your message
           </button>
         </div>
-        <div class="mt-4 text-xs ">
-          <p class=" text-gray-700"> Don't have an account?<a class="text-blue-700 hover:blue-950 ml-2" href="/forms/signup">Sing up instead</a></p>
+        <div class="mt-4 text-xs">
+          <p class="text-gray-700">
+            Don't have an account?<a
+              class="text-blue-700 hover:blue-950 ml-2"
+              href="/forms/signup"
+              title="your link title"
+              aria-label="your links label">Sing up instead</a>
+          </p>
         </div>
       </form>
     </div>
     <div class="items-center hidden relative mx-auto lg:grid grid-cols-1">
-      <div
-        class="flex flex-col flex-shrink-0 lg:animate-scrollerDown gap-2 "
-      >
+      <div class="flex flex-col flex-shrink-0 lg:animate-scrollerDown gap-2">
         <img
           class="rounded-3xl shadow-box shadow-blue-500/50 tilt-card rotate-12"
           src="/card1.svg"
-          alt=""
+          alt="your image description"
         />
         <img
           class="rounded-3xl shadow-box shadow-gray-500/20 tilt-card -rotate-6"
           src="/card2.svg"
-          alt=""
+          alt="your image description"
         />
         <img
           class="rounded-3xl shadow-box shadow-blue-950/20 tilt-card -rotate-45"
           src="/card3.svg"
-          alt=""
+          alt="your image description"
         />
       </div>
     </div>

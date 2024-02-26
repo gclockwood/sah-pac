@@ -4,10 +4,10 @@
   >
     <div class="max-w-xl px-8 md:pr-12 lg:pr-44 lg:pb-0 order-last">
       <p
-        class=" text-4xl font-semibold tracking-tighter text-blue-950 lg:text-8xl text-balance"
+        class="text-4xl font-semibold tracking-tighter text-blue-950 lg:text-8xl text-balance"
       >
         Sing up to <span
-          class=" md:text-transparent md:bg-clip-text md:bg-gradient-to-r from-blue-500 to-indigo-600 py-2"
+          class="md:text-transparent md:bg-clip-text md:bg-gradient-to-r from-blue-500 to-indigo-600 py-2"
           >Alfred</span
         >
       </p>
@@ -19,8 +19,9 @@
               type="text"
               name="first_name"
               autocomplete="given-name"
-              required=""
               placeholder="Your name"
+              aria-placeholder="Your name"
+              required
               class="block w-full h-12 px-4 py-3 placeholder-gray-500 bg-white border-0 rounded-lg appearance-none text-blue-500 focus:border-blue-500 focus:bg-white focus:outline-none focus:ring-blue-500 focus:ring-inset text-xs"
             />
           </div>
@@ -30,8 +31,9 @@
               type="text"
               name="last_name"
               autocomplete="given-name"
-              required=""
               placeholder="Your last name"
+              aria-placeholder="Your last name"
+              required
               class="block w-full h-12 px-4 py-3 placeholder-gray-500 bg-white border-0 rounded-lg appearance-none text-blue-500 focus:border-blue-500 focus:bg-white focus:outline-none focus:ring-blue-500 focus:ring-inset text-xs"
             />
           </div>
@@ -41,17 +43,21 @@
               type="email"
               name="email"
               autocomplete="given-name"
-              required=""
               placeholder="example@lexingtonthemes.com"
+              aria-placeholder="example@lexingtonthemes.com"
+              required
               class="block w-full h-12 px-4 py-3 placeholder-gray-500 bg-white border-0 rounded-lg appearance-none text-blue-500 focus:border-blue-500 focus:bg-white focus:outline-none focus:ring-blue-500 focus:ring-inset text-xs"
             />
           </div>
           <div class="col-span-full">
-            <label name="company" class="sr-only"> Email</label><input
-              type="email"
-              class="block w-full h-12 px-4 py-3 placeholder-gray-500 bg-white border-0 rounded-lg appearance-none text-blue-500 focus:border-blue-500 focus:bg-white focus:outline-none focus:ring-blue-500 focus:ring-inset text-xs"
+            <label for="password" class="sr-only"> Email</label>
+            <input
+              id="password"
+              type="password"
               placeholder="Your password "
+              aria-placeholder="Your password "
               value="********"
+              class="block w-full h-12 px-4 py-3 placeholder-gray-500 bg-white border-0 rounded-lg appearance-none text-blue-500 focus:border-blue-500 focus:bg-white focus:outline-none focus:ring-blue-500 focus:ring-inset text-xs"
             />
           </div>
         </div>
@@ -65,9 +71,12 @@
         </div>
         <div class="mt-4 text-xs">
           <p class="text-gray-700">
-           Already have an account?<a
+            Already have an account?<a
               class="text-blue-700 hover:blue-950 ml-2"
-              href="/forms/login">Sing in instead</a>
+              href="/forms/login"
+              title="your link title"
+              aria-label="your links label">Sing in instead</a
+            >
           </p>
         </div>
       </form>
@@ -77,17 +86,17 @@
         <img
           class="rounded-3xl shadow-box shadow-blue-500/50 tilt-card rotate-12"
           src="/card1.svg"
-          alt=""
+          alt="your image description"
         />
         <img
           class="rounded-3xl shadow-box shadow-gray-500/20 tilt-card -rotate-6"
           src="/card2.svg"
-          alt=""
+          alt="your image description"
         />
         <img
           class="rounded-3xl shadow-box shadow-blue-950/20 tilt-card -rotate-45"
           src="/card3.svg"
-          alt=""
+          alt="your image description"
         />
       </div>
     </div>

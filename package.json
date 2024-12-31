@@ -1,5 +1,5 @@
 {
-  "name": "@lexington/starter",
+  "name": "@lexington/alfred",
   "type": "module",
   "version": "0.0.1",
   "private": true,
@@ -11,16 +11,15 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/mdx": "^2.1.1",
-    "@astrojs/preact": "^3.1.1",
-    "@astrojs/rss": "^4.0.5",
-    "@astrojs/sitemap": "^3.1.1",
-    "@astrojs/tailwind": "^5.1.0",
-    "@tailwindcss/aspect-ratio": "^0.4.2",
+    "@astrojs/mdx": "^4.0.3",
+    "@astrojs/rss": "^4.0.10",
+    "@astrojs/sitemap": "^3.2.1",
+    "@astrolib/seo": "^1.0.0-beta.8",
     "@tailwindcss/forms": "^0.5.7",
     "@tailwindcss/typography": "^0.5.10",
-    "astro": "^4.4.4",
-    "preact": "^10.19.6",
-    "tailwind-scrollbar-hide": "^1.1.7"
+    "@tailwindcss/vite": "^4.0.0-beta.8",
+    "astro": "^5.1.1",
+    "tailwind-scrollbar-hide": "^1.1.7",
+    "tailwindcss": "^4.0.0-beta.8"
   }
 }

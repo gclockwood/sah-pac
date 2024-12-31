@@ -23,7 +23,7 @@
       </div>
       <div class="lg:ml-auto">
         <div
-          class="w-full border bg-white overflow-hidden inline-flex mt-6 p-0.5 rounded-full max-w-xs shadow-button shadow-white/20 z-0"
+          class="w-full border border-gray-200 bg-white overflow-hidden inline-flex mt-6 p-0.5 rounded-full max-w-xs shadow-button shadow-white/20 z-0"
         >
           <button
             id="monthly-pricing-button"
@@ -57,7 +57,7 @@
               ></span
             >
           </div>
-          <div class="flex flex-col justify-between gap-2 lg:flex-row ">
+          <div class="flex flex-col justify-between gap-2 lg:flex-row">
             <div>
               <p
                 class="font-mono text-base font-medium tracking-tighter uppercase text-blue-950"
@@ -177,7 +177,8 @@
           </li>
         </ul>
         <div class="w-full mt-8">
-          <a aria-label="Get started with plan-name"
+          <a
+            aria-label="Get started with plan-name"
             class="flex items-center justify-center h-10 px-4 py-2 text-sm font-semibold text-gray-500 transition-all duration-200 bg-white border border-gray-300 rounded-full hover:text-blue-700 focus:ring-2 shadow-button shadow-gray-500/5 focus:ring-blue-950 focus:ring-offset-2 ring-offset-gray-200 hover:shadow-none"
             href="#_">Get started</a
           >
@@ -190,17 +191,17 @@
           <div class="flex flex-col gap-2">
             <div>
               <span
-              class="inline-flex items-center gap-1 px-2 py-1 text-xs font-medium text-white bg-blue-800 rounded-md ring-1 ring-inset ring-gray-500/10"
-              >Monthly <span
-                x-show="duration === 'annual'"
-                style="display: none;">billed annually</span
-              ></span
-            >
+                class="inline-flex items-center gap-1 px-2 py-1 text-xs font-medium text-white bg-blue-800 rounded-md ring-1 ring-inset ring-gray-500/10"
+                >Monthly <span
+                  x-show="duration === 'annual'"
+                  style="display: none;">billed annually</span
+                ></span
+              >
             </div>
             <div class="flex flex-col justify-between gap-2 lg:flex-row">
-              <div >
+              <div>
                 <p
-                  class="font-mono text-base font-medium tracking-tighter text-white uppercase "
+                  class="font-mono text-base font-medium tracking-tighter text-white uppercase"
                 >
                   Golden Unicorn
                 </p>
@@ -213,12 +214,13 @@
                   data-monthly="$49"
                   data-annual="$39"
                   x-text="$el.dataset[duration]"></span>
-
               </p>
             </div>
           </div>
         </div>
-        <div class="grid justify-between gap-4 mt-10 gird-cols-1 xl:grid-cols-2">
+        <div
+          class="grid justify-between gap-4 mt-10 gird-cols-1 xl:grid-cols-2"
+        >
           <ul class="flex flex-col text-sm text-white gap-y-3" role="list">
             <li class="flex flex-row items-center gap-2">
               <svg
@@ -413,10 +415,10 @@
               <span>Multiple integrations</span>
             </li>
           </ul>
-
         </div>
         <div class="w-full mt-8">
-          <a aria-label="Get started with plan-name"
+          <a
+            aria-label="Get started with plan-name"
             class="flex items-center justify-center h-10 px-4 py-2 text-sm font-semibold text-gray-500 transition-all duration-200 bg-white border border-gray-300 rounded-full hover:text-blue-700 focus:ring-2 shadow-button shadow-gray-500/5 focus:ring-blue-950 focus:ring-offset-2 ring-offset-gray-200 hover:shadow-none"
             href="#_">Get started</a
           >

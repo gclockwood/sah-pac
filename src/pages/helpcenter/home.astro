@@ -31,10 +31,10 @@ const allPosts = await getCollection("helpcenter");
         <div
           class="w-full p-2 mt-8 rounded-2xl lg:rounded-full sm:flex sm:max-w-md bg-white shadow-box shadow-gray-500/20"
         >
-        <div class="relative flex items-center w-full">
+          <div class="relative flex items-center w-full">
             <label for="search" class="sr-only">Quick search</label>
             <input
-            id="search"
+              id="search"
               type="text"
               name="search"
               class="pr-14 block w-full h-10 px-4 py-2 text-sm text-blue-700 border border-transparent appearance-none rounded-xl lg:rounded-full bg-gray-50 placeholder-gray-700 focus:border-gray-500 focus:bg-transparent focus:outline-none focus:ring-indigo-300 sm:text-sm"
@@ -56,7 +56,10 @@ const allPosts = await getCollection("helpcenter");
           Explore all topics
         </p>
 
-        <ul role="list" class="divide-y mt-8 border-y">
+        <ul
+          role="list"
+          class="divide-y mt-8 border-y border-gray-200 divide-gray-200"
+        >
           {
             allPosts
               .slice()

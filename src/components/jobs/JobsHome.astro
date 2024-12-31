@@ -1,36 +1,28 @@
 ---
 const features = [
   {
-
     icon: "contribute",
     title: "CONTRIBUTE",
     description:
-    "We'll align your charitable donations with the causes that matter most to you, and we strongly encourage and support volunteer efforts.",
-
+      "We'll align your charitable donations with the causes that matter most to you, and we strongly encourage and support volunteer efforts.",
   },
   {
-
     icon: "revitalize",
     title: "revitalize",
     description:
       "We maintain a healthy work-life balance by offering ample vacation time, holidays, and mandatory personal wellness days. Take a break and rejuvenate.",
-
   },
   {
-
     icon: "family",
     title: "supporting familiy",
     description:
       "Parenting, or caring for your loved ones, can be demanding. We provide assistance, from savings for dependent care to parental leave, to make the journey smoother.",
-
   },
   {
-
     icon: "future",
     title: "investing in your future",
     description:
       "Dive deeper than just a 401(k) with our discounted stock purchase program to significantly boost your savings.",
-
   },
 ];
 const jobPostings = [
@@ -38,28 +30,29 @@ const jobPostings = [
     title: "Senior Designer",
     location: "Remote",
     salaryRange: "$120K - $460K",
-    closesOn: "31st Dec"
+    closesOn: "31st Dec",
   },
   {
     title: "Engineering Manager - Workflow",
     location: "Remote",
     salaryRange: "$220K - $660K",
-    closesOn: "31st Dec"
+    closesOn: "31st Dec",
   },
   {
     title: "Senior Full Stack Developer - Media Services",
     location: "Remote",
     salaryRange: "$90K - $160K",
-    closesOn: "1st Dec"
+    closesOn: "1st Dec",
   },
   {
     title: "Software Engineering Manager - Backend",
     location: "Remote",
     salaryRange: "$290K - $860K",
-    closesOn: "1st Dec"
-  }
+    closesOn: "1st Dec",
+  },
 ];
 ---
+
 <section>
   <div class="relative max-w-screen-xl px-8 py-24 mx-auto md:px-12 lg:px-32">
     <div class="text-center">
@@ -74,8 +67,8 @@ const jobPostings = [
         We are hiring.
       </p>
       <p class="max-w-md mt-4 mx-auto text-base text-gray-700 lg:text-base">
-        Alfred is growing. Join our diverse and talented crew and help
-        empower the world’s top creators.
+        Alfred is growing. Join our diverse and talented crew and help empower
+        the world’s top creators.
       </p>
       <div class="flex flex-col md:flex-row justify-center gap-3 mt-10">
         <a
@@ -130,7 +123,6 @@ const jobPostings = [
         features.map((feature) => (
           <>
             <div class="flex flex-col justify-between h-full">
-
               <div>
                 <div class="inline-flex items-center gap-2  font-mono uppercase tracking-tighter text-xs">
                   {feature.icon === "contribute" && (
@@ -179,7 +171,7 @@ const jobPostings = [
                       <path d="M7 15l.01 0" /> <path d="M11 15l2 0" />
                     </svg>
                   )}
-                   {feature.icon === "future" && (
+                  {feature.icon === "future" && (
                     <svg
                       class="size-4 icon icon-tabler text-blue-700 icon-tabler-credit-card"
                       viewBox="0 0 24 24"
@@ -203,12 +195,10 @@ const jobPostings = [
               <div class="mt-2 text-sm text-gray-700">
                 <span>{feature.description}</span>
               </div>
-
             </div>
           </>
         ))
       }
-
     </div>
   </div>
 </section>
@@ -234,31 +224,36 @@ const jobPostings = [
         We are looking for talent in this fields
       </p>
     </div>
-    <ul role="list" class="divide-y mt-12 border-y">
-  {jobPostings.map((job) => (
-    <li class="relative flex justify-between gap-x-6 py-5">
-      <div class="min-w-0 flex-auto">
-        <p class="font-mono text-base font-medium tracking-tighter uppercase">
-          <a href="#_">
-            <span class="absolute inset-x-0 -top-px bottom-0"></span>
-            {job.title}
-          </a>
-        </p>
-        <p class="mt-1 flex text-xs text-gray-700">{job.location}</p>
-      </div>
+    <ul
+      role="list"
+      class="divide-y mt-12 border-y divide-gray-200 border-gray-200"
+    >
+      {
+        jobPostings.map((job) => (
+          <li class="relative flex justify-between gap-x-6 py-5">
+            <div class="min-w-0 flex-auto">
+              <p class="font-mono text-base font-medium tracking-tighter uppercase">
+                <a href="#_">
+                  <span class="absolute inset-x-0 -top-px bottom-0" />
+                  {job.title}
+                </a>
+              </p>
+              <p class="mt-1 flex text-xs text-gray-700">{job.location}</p>
+            </div>
 
-      <div class="flex shrink-0 items-center gap-x-4">
-        <div class="hidden sm:flex sm:flex-col sm:items-end">
-          <p class="font-mono text-base font-medium tracking-tighter uppercase">
-            {job.salaryRange}
-          </p>
-          <p class="mt-1 text-xs text-gray-700">
-            Closes on <time datetime="#">{job.closesOn}</time>
-          </p>
-        </div>
-      </div>
-    </li>
-  ))}
-</ul>
+            <div class="flex shrink-0 items-center gap-x-4">
+              <div class="hidden sm:flex sm:flex-col sm:items-end">
+                <p class="font-mono text-base font-medium tracking-tighter uppercase">
+                  {job.salaryRange}
+                </p>
+                <p class="mt-1 text-xs text-gray-700">
+                  Closes on <time datetime="#">{job.closesOn}</time>
+                </p>
+              </div>
+            </div>
+          </li>
+        ))
+      }
+    </ul>
   </div>
 </section>

@@ -20,7 +20,7 @@ import IntegratioDetails from "@/components/integrations/IntegrationDetails.astr
           </span>
         </p>
       </div>
-      <p class=" text-base text-gray-700 lg:text-base">
+      <p class="text-base text-gray-700 lg:text-base">
         Enhance your Linear experience with a wide variety of add-ons and
         integrations. From everyday essentials to powerful pro workflows.
       </p>
@@ -29,7 +29,10 @@ import IntegratioDetails from "@/components/integrations/IntegrationDetails.astr
       class="grid grid-cols-1 gap-10 items-start xl:gap-24 lg:grid-cols-3 mt-12 lg:mt-24"
     >
       <nav class="lg:sticky lg:top-20">
-        <ul class="text-xs text-gray-700 space-y-3  border-l" role="list">
+        <ul
+          class="text-xs text-gray-700 space-y-3 border-l border-gray-200"
+          role="list"
+        >
           <li>
             <a
               class="font-mono text-xs font-medium tracking-tight text-blue-950 uppercase hover:text-blue-700 pl-4 hover:border-l-2 duration-200 hover:translate-x transition-all hover:border-blue-500"
@@ -64,7 +67,7 @@ import IntegratioDetails from "@/components/integrations/IntegrationDetails.astr
             class="relative mt-8 grid gap-2 sm:grid-cols-2 xl:grid-cols-3 wöf"
           >
             {
-              integrations.slice(0,4).map((template) => (
+              integrations.slice(0, 4).map((template) => (
                 <>
                   <div x-data="{ open: false }" class="">
                     <button
@@ -96,7 +99,7 @@ import IntegratioDetails from "@/components/integrations/IntegrationDetails.astr
             class="relative mt-8 grid gap-2 sm:grid-cols-2 xl:grid-cols-3 wöf"
           >
             {
-              integrations.slice(4,7).map((template) => (
+              integrations.slice(4, 7).map((template) => (
                 <>
                   <div x-data="{ open: false }" class="">
                     <button
@@ -121,15 +124,14 @@ import IntegratioDetails from "@/components/integrations/IntegrationDetails.astr
           <p
             class="font-mono text-base font-medium tracking-tighter uppercase text-blue-950"
           >
-          MEDIA AND WORKFLOW
-
+            MEDIA AND WORKFLOW
           </p>
 
           <div
             class="relative mt-8 grid gap-2 sm:grid-cols-2 xl:grid-cols-3 wöf"
           >
             {
-              integrations.slice(7,12).map((template) => (
+              integrations.slice(7, 12).map((template) => (
                 <>
                   <div x-data="{ open: false }" class="">
                     <button

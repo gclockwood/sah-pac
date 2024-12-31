@@ -1,41 +1,95 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-:root {
-  font-family: Inter, sans-serif;
-  font-feature-settings:
-  "liga" 1,
-  "calt" 1, /* Contextual Alternates */
-  "dlig" 1, /* Discretionary Ligatures */
-  "ss07" 1, /* fSquare punctuation */
-  "ss08" 1, /* Square quotes */
-  "zero" 1, /* Slashed zero */
-  "tnum" 1, /* Tabular numbers */
-    "cv03" 1, /* Open six */
-    "cv04" 1, /* Open nine */
-    "cv01" 1, /* Alternate one */
-    "cv09", /* Flat-top three */
-    "cv02" 1; /* Open 4 */
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+@plugin "@tailwindcss/forms";
+@plugin "tailwind-scrollbar-hide";
+@layer components {
+  .prose-styles {
+    /* Default text color for dark theme */
+    @apply prose  max-w-none  prose-headings:uppercase  prose-li:marker:text-blue-700 prose-pre:shadow-box prose-pre:shadow-gray-500/20 prose-pre:rounded-2xl     prose-headings:font-semibold prose-headings:text-blue-950 prose-h1:text-2xl prose-headings:tracking-tighter text-sm prose-p:text-gray-700 prose-pre:bg-blue-900 prose-img:rounded-md prose-blockquote:border-blue-600 prose-img:w-full;
+  }
 }
+
+@theme {
+  /* Typography */
+  --font-sans: Inter, sans-serif;
+  --font-mono: JetBrains Mono, monospace;
+  /* Colors*/
+   /* Indigo Colors */
+   --color-indigo-50: hsl(245, 100%, 97%);
+   --color-indigo-100: hsl(240, 100%, 95%);
+   --color-indigo-200: hsl(241, 100%, 92%);
+   --color-indigo-300: hsl(242, 100%, 85%);
+   --color-indigo-400: hsl(244, 100%, 76%);
+   --color-indigo-500: hsl(248, 98%, 66%);
+   --color-indigo-600: hsl(252, 91%, 57%);
+   --color-indigo-700: hsl(253, 76%, 50%);
+   --color-indigo-800: hsl(253, 76%, 42%);
+   --color-indigo-900: hsl(254, 74%, 35%);
+   --color-indigo-950: hsl(251, 79%, 23%);
+ 
+   /* Blue Colors */
+   --color-blue-50: hsl(225, 100%, 97%);
+   --color-blue-100: hsl(225, 95%, 93%);
+   --color-blue-200: hsl(223, 97%, 87%);
+   --color-blue-300: hsl(221, 96%, 78%);
+   --color-blue-400: hsl(223, 95%, 68%);
+   --color-blue-500: hsl(227, 92%, 62%);
+   --color-blue-600: hsl(230, 84%, 53%);
+   --color-blue-700: hsl(234, 77%, 48%);
+   --color-blue-800: hsl(235, 71%, 40%);
+   --color-blue-900: hsl(234, 64%, 33%);
+   --color-blue-950: hsl(236, 57%, 21%);
+   --color-blue-1000: hsl(239, 51%, 18%);
+ 
+   /* Gray Colors */
+   --color-gray-50: hsl(225, 25%, 97%);
+   --color-gray-100: hsl(223, 24%, 94%);
+   --color-gray-200: hsl(219, 26%, 87%);
+   --color-gray-300: hsl(221, 25%, 78%);
+   --color-gray-400: hsl(222, 24%, 68%);
+   --color-gray-500: hsl(226, 23%, 60%);
+   --color-gray-600: hsl(229, 21%, 53%);
+   --color-gray-700: hsl(234, 19%, 48%);
+   --color-gray-800: hsl(234, 18%, 40%);
+   --color-gray-900: hsl(234, 17%, 33%);
+   --color-gray-950: hsl(236, 14%, 21%);
+  /* Border radious */
+  --radious-4xl: 2rem;
+  --radious-5xl: 3rem;
+  --radious-6xl: 5rem;
+  /* Shadow */
+  --shadow-button: 0px 1px 2px, 0px 0px 0px 1px inset, 0px 0px 0px 1px inset;
+  --shadow-box: 0px 1px 8px,  0px -1px 1px inset;
+  /* Drop Shadow */
+  --drop-shadow-box: 0px 1px 8px,  0px -1px 1px inset;
+  
+}
+
 @supports (font-variation-settings: normal) {
   /* Use variable font if supported */
   :root {
     font-family: InterVariable, sans-serif;
   }
 }
-
 :root {
-  --astro-code-color-text: theme('colors.blue.900');
-  --astro-code-color-background: theme('colors.white');
-  --astro-code-token-constant: theme('colors.indigo.600');
-  --astro-code-token-string: theme('colors.teal.600');
-  --astro-code-token-comment: theme('colors.gray.600');
-  --astro-code-token-keyword: theme('colors.blue.300');
-  --astro-code-token-parameter: theme('colors.white');
-  --astro-code-token-function: theme('colors.sky.500');
-  --astro-code-token-string-expression: theme('colors.blue.500');
-  --astro-code-token-punctuation: theme('colors.white');
-  --astro-code-token-link: theme('colors.white');
+  font-family: Inter, sans-serif;
+  font-feature-settings: "liga" 1, "calt" 1,
+    /* Contextual Alternates */ "dlig" 1, /* Discretionary Ligatures */ "ss07" 1,
+    /* fSquare punctuation */ "ss08" 1, /* Square quotes */ "zero" 1,
+    /* Slashed zero */ "tnum" 1, /* Tabular numbers */ "cv03" 1,
+    /* Open six */ "cv04" 1, /* Open nine */ "cv01" 1,
+    /* Alternate one */ "cv09", /* Flat-top three */ "cv02" 1; /* Open 4 */
+  --astro-code-color-text: theme("colors.blue.900");
+  --astro-code-background: theme("colors.white");
+  --astro-code-token-constant: theme("colors.indigo.600");
+  --astro-code-token-string: theme("colors.teal.600");
+  --astro-code-token-comment: theme("colors.gray.600");
+  --astro-code-token-keyword: theme("colors.blue.300");
+  --astro-code-token-parameter: theme("colors.white");
+  --astro-code-token-function: theme("colors.sky.500");
+  --astro-code-token-string-expression: theme("colors.blue.500");
+  --astro-code-token-punctuation: theme("colors.white");
+  --astro-code-token-link: theme("colors.white");
 }
 
 /* Transition on the summary tag by faking the bottom maring*/
@@ -47,12 +101,66 @@ details[open] summary {
   margin-bottom: 10px;
 }
 
-
-.prose-styles {
-  @apply prose  max-w-none  prose-headings:uppercase  prose-li:marker:text-blue-700 prose-pre:shadow-box prose-pre:shadow-gray-500/20 prose-pre:rounded-2xl     prose-headings:font-semibold prose-headings:text-blue-950 prose-h1:text-2xl prose-headings:tracking-tighter text-sm prose-p:text-gray-700 prose-pre:bg-blue-900 prose-img:rounded-md prose-blockquote:border-blue-600 prose-img:w-full;
+/* Animations */
+.marquee-left {
+  animation: marqueeLeft 20s linear infinite;
 }
 
+.marquee-right {
+  animation: marqueeRight 20s linear infinite;
+}
 
+.animation-paused:hover {
+  animation-play-state: paused; /* Stops animation on hover */
+}
 
+.scroller-down {
+  animation: scrollerDown 12s linear infinite;
+}
 
+.scroller-up {
+  animation: scrollerUp 12s linear infinite;
+}
 
+/* Keyframes */
+@keyframes marqueeLeft {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes marqueeRight {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes scrollerDown {
+  0% {
+    transform: translateY(-10em);
+  }
+  100% {
+    transform: translateY(14em);
+  }
+}
+
+@keyframes scrollerUp {
+  0% {
+    transform: translateY(10em);
+  }
+  100% {
+    transform: translateY(-14em);
+  }
+}
+
+@keyframes spin-reverse {
+  to {
+    transform: rotate(-360deg);
+  }
+}

@@ -28,9 +28,9 @@ const comparisons = [
     alfred: true,
     other: false,
   },
-  
 ];
 ---
+
 <section>
   <div class="px-8 py-24 mx-auto md:px-12 lg:px-32 max-w-screen-xl">
     <div class="grid grid-cols-4 items-end pb-8">
@@ -54,13 +54,10 @@ const comparisons = [
         Other processors
       </div>
     </div>
-    <div class="border-y divide-y">
+    <div class="border-y divide-y border-gray-200 divide-gray-200">
       {
         comparisons.map((comparison, index) => (
-          <div
-            key={index}
-            class="grid grid-flow-row-dense grid-cols-4 items-start py-6 gap-4"
-          >
+          <div class="grid grid-flow-row-dense grid-cols-4 items-start py-6 gap-4">
             <div class="order-1 col-span-3 md:col-span-2 lg:col-span-1">
               <p class="font-mono uppercase tracking-tighter text-sm">
                 {comparison.title}

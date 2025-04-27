@@ -48,7 +48,6 @@ const dropdowns = [
   },
 ];
 ---
-
 <header class="fixed z-50 w-full top-4 md:px-12">
   <div class="px-8 md:px-0 mx-auto 2xl:px-12 max-w-screen 2xl:max-w-[1440px]">
     <div
@@ -57,7 +56,9 @@ const dropdowns = [
       <div class="flex flex-row items-center justify-between w-full md:w-auto">
         <a href="/" class="font-mono text-base font-bold uppercase bg-black">
           <Logo class="h-full p-2 text-white size-11" />
+          <span class="sr-only">Homepage</span>
         </a>
+        
         <button
           class="relative z-50 text-white bg-black md:hidden focus:outline-none focus:shadow-outline size-11"
           aria-label="Toggle navigation menu"
@@ -80,126 +81,93 @@ const dropdowns = [
           </svg>
         </button>
       </div>
-      <!-- Fullscreen nav on mobile -->
       <nav
         id="navMenu"
-        class="fixed inset-0 z-40 flex-col hidden w-full p-8 mt-12 bg-white md:mt-0 md:p-0 md:border-l md:border-base-200 md:items-center md:justify-end gap-2 md:gap-0 sm:relative md:flex md:flex-row md:bg-transparent md:static "
-        role="navigation"
+        class="fixed inset-0 z-40 flex-col hidden w-full p-8 mt-12 bg-white md:mt-0 md:p-0 md:border-l md:border-base-200 md:items-center md:justify-end gap-2 md:gap-0 sm:relative md:flex md:flex-row md:bg-transparent md:static"
+        role="menubar"
         aria-label="Main navigation"
       >
         {
           dropdowns.map((dropdown) => (
-            <ul role="menu">
-              <li class="relative w-full group/menu md:w-auto" tabindex="-1">
-                <Button
-                  size="md"
-                  variant="muted"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                  aria-controls={dropdown.id}
-                  data-menu-button={dropdown.id}
-                  class="w-full h-full text-sm font-medium dropdown-toggle focus:outline-none md:w-auto "
-                >
-                  {dropdown.label}
-                </Button>
-                <div
-                  id={dropdown.id}
-                  role="menu"
-                  class="dropdown-menu absolute mt-2 z-50 top-full w-50 md:w-78.5 bg-white outline outline-base-200 opacity-0 invisible transform transition-all duration-300"
-                >
-                  <ul class="divide-y divide-base-200">
-                    {dropdown.items.map((item) => (
-                      <li>
-                        <a
-                          role="menuitem"
-                          href={item.href}
-                          aria-label={`Go to ${item.label} page`}
-                          class="flex items-center text-sm font-medium hover:text-base-600 focus:outline-none gap-2 group divide-x divide-base-200"
-                        >
-                          <div class="p-2.5 group group-hover:bg-black duration-300">
-                            <span class="flex items-center justify-center text-sm  size-6 group-hover:border-black ring-transparent group-hover:text-white duration-300">
+            <div role="none" class="relative">
+              <button
+                role="menuitem"
+                aria-haspopup="true"
+                aria-expanded="false"
+                aria-controls={dropdown.id}
+                data-menu-button={dropdown.id}
+                class="px-4 py-2 text-sm font-medium focus:outline-none"
+              >
+                {dropdown.label}
+              </button>
+              <ul
+                id={dropdown.id}
+                role="menu"
+                class="dropdown-menu absolute mt-2 z-50 top-full w-50 md:w-78.5 bg-white outline outline-base-200 opacity-0 invisible transition-all duration-300"
+              >
+                {dropdown.items.map((item) => (
+                  <li role="none">
+                    <a
+                      role="menuitem"
+                      href={item.href}
+                      aria-label={`Go to ${item.label} page`}
+                      class="flex items-center gap-2 px-4 py-2 text-sm hover:text-base-600"
+                    >
+                      <span class="p-2 text-sm size-6">{item.shortcut}</span>
+                      {item.label}
+                    </a>
+                  </li>
+                ))}
+                {dropdown.flyout && (
+                  <li role="none" class="relative">
+                    <button
+                      role="menuitem"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                      aria-controls="second-flyout-submenu"
+                      class="flex w-full justify-between px-4 py-2 text-sm hover:text-base-600"
+                    >
+                      {dropdown.flyout.label}
+                      <ChevronRight class="size-4" />
+                    </button>
+                    <ul
+                      id="second-flyout-submenu"
+                      role="menu"
+                      class="flyout-menu absolute left-full top-0 z-50 w-56 bg-white opacity-0 invisible transition-all duration-300"
+                    >
+                      {dropdown.flyout.items.map((item) => (
+                        <li role="none">
+                          <a
+                            role="menuitem"
+                            href={item.href}
+                            aria-label={`View ${item.label}`}
+                            class="flex items-center gap-2 px-4 py-2 text-sm hover:text-base-600"
+                          >
+                            <span class="p-2 text-sm size-6">
                               {item.shortcut}
                             </span>
-                          </div>
-                          <span>{item.label}</span>
-                        </a>
-                      </li>
-                    ))}
-
-                    {dropdown.flyout && (
-                      <li class="relative group/secondflyout">
-                        <button
-                          aria-haspopup="true"
-                          aria-expanded="false"
-                          aria-controls="second-flyout-submenu"
-                          aria-label="Toggle second-level submenu"
-                          class="flex items-center justify-between w-full pl-2 text-sm font-medium hover:text-base-600 focus:outline-none group"
-                        >
-                          <span>{dropdown.flyout.label}</span>
-                          <div class="p-2.5">
-                            <span class="flex items-center justify-center text-sm border rounded-full size-6 group-hover:border-black ring-transparent group-hover:text-white group-hover:bg-black duration-300">
-                              <ChevronRight class="size-4" />
-                            </span>
-                          </div>
-                        </button>
-                        <div
-                          id="second-flyout-submenu"
-                          class="flyout-menu absolute top-0 z-50 ml-[0.122rem] invisible w-56 opacity-0 left-full transform transition-all duration-300"
-                        >
-                          <ul class="bg-white divide-y divide-base-200 outline outline-base-200">
-                            {dropdown.flyout.items.map((item) => (
-                              <li>
-                                <a
-                                  role="menuitem"
-                                  href={item.href}
-                                  aria-label={`View ${item.label}`}
-                                  class="flex items-center text-sm font-medium hover:text-base-600 focus:outline-none gap-2 group divide-x divide-base-200"
-                                >
-                                  <div class="p-2.5 group">
-                                    <span class="flex items-center justify-center text-sm border rounded-full size-6 group-hover:border-black ring-transparent group-hover:text-white group-hover:bg-black duration-300">
-                                      {item.shortcut}
-                                    </span>
-                                  </div>
-                                  <span>{item.label}</span>
-                                </a>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      </li>
-                    )}
-                  </ul>
-                </div>
-              </li>
-            </ul>
+                            {item.label}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </li>
+                )}
+              </ul>
+            </div>
           ))
         }
-
-        <Link
-          size="md"
-          variant="muted"
-          href="/blog/home"
-          aria-label="Go to news page"
-          class="md:mr-auto"
+        <Link role="menuitem" href="/blog/home" class="px-4 py-2 text-sm"
+          >News</Link
         >
-          News
-        </Link>
-        <Link
-          href="/forms/sign-in"
-          size="md"
-          variant="muted"
-          aria-label="Buy Alfred"
+        <Link role="menuitem" href="/forms/sign-in" class="px-4 py-2 text-sm"
+          >Log in</Link
         >
-          Log in
-        </Link>
         <Link
-          size="md"
-          variant="default"
-          aria-label="Buy Alfred"
-          href="https://buy.polar.sh/polar_cl_If6pmsfFZUt7F1mjsfQjWC1EHxZDN3_u6HhhcEzUBm8"
+          role="menuitem"
+          href="https://buy.polar.sh/…"
+          class="px-4 py-2 text-sm">Buy Alfred</Link
         >
-          Buy Alfred
-        </Link>
       </nav>
     </div>
   </div>
@@ -209,7 +177,6 @@ const dropdowns = [
       const nav = document.getElementById("navMenu");
       const menuIcon = document.getElementById("menuIcon");
       const closeIcon = document.getElementById("closeIcon");
-
       // Mobile menu toggle
       toggle.addEventListener("click", () => {
         const isOpen = nav.classList.contains("flex");
@@ -218,7 +185,6 @@ const dropdowns = [
         menuIcon.classList.toggle("hidden", !isOpen);
         closeIcon.classList.toggle("hidden", isOpen);
       });
-
       // Close nav on Escape key
       document.addEventListener("keydown", (e) => {
         if (e.key === "Escape" && nav.classList.contains("flex")) {
@@ -228,23 +194,19 @@ const dropdowns = [
           closeIcon.classList.add("hidden");
         }
       });
-
       // Keyboard navigation inside menus
       const menus = document.querySelectorAll('nav [role="menu"]');
       menus.forEach((menu) => {
         const items = menu.querySelectorAll('[role="menuitem"]');
-
         menu.addEventListener("keydown", (e) => {
           const currentIndex = Array.from(items).indexOf(
             document.activeElement
           );
-
           if (e.key === "ArrowDown") {
             e.preventDefault();
             const nextIndex = (currentIndex + 1) % items.length;
             items[nextIndex].focus();
           }
-
           if (e.key === "ArrowUp") {
             e.preventDefault();
             const prevIndex = (currentIndex - 1 + items.length) % items.length;
@@ -252,35 +214,27 @@ const dropdowns = [
           }
         });
       });
-
       // -----------------------------------------
       // Dropdowns (first-level) open/close on click
       // -----------------------------------------
-
       const dropdownToggles = document.querySelectorAll(".dropdown-toggle");
-
       dropdownToggles.forEach((toggle) => {
         const menuId = toggle.dataset.menuButton;
         const dropdown = document.getElementById(menuId);
-
         toggle.addEventListener("click", (e) => {
           e.preventDefault();
           e.stopPropagation();
-
           const isOpen = dropdown.classList.contains("opacity-100");
-
           // Close all dropdowns
           document.querySelectorAll(".dropdown-menu").forEach((menu) => {
             menu.classList.add("opacity-0", "invisible");
             menu.classList.remove("opacity-100", "visible");
           });
-
           // Close all flyouts too
           document.querySelectorAll(".flyout-menu").forEach((menu) => {
             menu.classList.add("opacity-0", "invisible");
             menu.classList.remove("opacity-100", "visible");
           });
-
           // Toggle this dropdown
           if (!isOpen) {
             dropdown.classList.remove("opacity-0", "invisible");
@@ -288,30 +242,23 @@ const dropdowns = [
           }
         });
       });
-
       // -----------------------------------------
       // Flyouts (second-level) open/close on click
       // -----------------------------------------
-
       const flyoutToggles = document.querySelectorAll(
         '[aria-controls="second-flyout-submenu"]'
       );
-
       flyoutToggles.forEach((toggle) => {
         const flyout = document.getElementById("second-flyout-submenu");
-
         toggle.addEventListener("click", (e) => {
           e.preventDefault();
           e.stopPropagation();
-
           const isOpen = flyout.classList.contains("opacity-100");
-
           // Close all flyouts
           document.querySelectorAll(".flyout-menu").forEach((menu) => {
             menu.classList.add("opacity-0", "invisible");
             menu.classList.remove("opacity-100", "visible");
           });
-
           // Toggle this flyout
           if (!isOpen) {
             flyout.classList.remove("opacity-0", "invisible");
@@ -319,7 +266,6 @@ const dropdowns = [
           }
         });
       });
-
       // Close everything on outside click
       document.addEventListener("click", (e) => {
         if (

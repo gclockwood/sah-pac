@@ -1,6 +1,6 @@
 ---
 import { getCollection } from "astro:content";
-import ChangelogLayout from "../../layouts/ChangelogLayout.astro";
+import ChangelogLayout from "@/layouts/ChangelogLayout.astro";
 export async function getStaticPaths() {
   const changelog = await getCollection("changelog");
   const paths = changelog.map((page) => {

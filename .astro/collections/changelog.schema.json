@@ -4,10 +4,10 @@
     "changelog": {
       "type": "object",
       "properties": {
-        "title": {
+        "page": {
           "type": "string"
         },
-        "intro": {
+        "description": {
           "type": "string"
         },
         "pubDate": {
@@ -26,14 +26,31 @@
             }
           ]
         },
+        "image": {
+          "type": "object",
+          "properties": {
+            "url": {
+              "type": "string"
+            },
+            "alt": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "url",
+            "alt"
+          ],
+          "additionalProperties": false
+        },
         "$schema": {
           "type": "string"
         }
       },
       "required": [
-        "title",
-        "intro",
-        "pubDate"
+        "page",
+        "description",
+        "pubDate",
+        "image"
       ],
       "additionalProperties": false
     }

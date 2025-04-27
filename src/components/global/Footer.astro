@@ -1,260 +1,133 @@
-<footer class="overflow-hidden">
-  <div class="max-w-screen-xl px-8 py-24 mx-auto md:px-12 lg:px-32">
+---
+import Text from "@/components/fundations/elements/Text.astro";
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+import Button from "@/components/fundations/elements/Button.astro";
+const footerLinks = [
+  {
+    title: "Navigation",
+    links: [
+      { href: "/system/overview", label: "Overview" },
+      { href: "/system/colors", label: "Colors" },
+      { href: "/system/links", label: "Links" },
+      { href: "/system/buttons", label: "Buttons" },
+      { href: "/system/typography", label: "Typography" },
+    ],
+  },
+  {
+    title: "Stay updated",
+    links: [
+      { href: "/blog/home", label: "Blog" },
+      { href: "/changelog/home", label: "Changelog" },
+      {
+        href: "https://www.lexingtonthemes.com/legal/license",
+        label: "License",
+      },
+      {
+        href: "https://www.lexingtonthemes.com/documentation",
+        label: "Documentation",
+      },
+    ],
+  },
+  {
+    title: "Company",
+    links: [
+      { href: "/about", label: "About" },
+      { href: "/customers/home", label: "Customers" },
+      { href: "/helpcenter/home", label: "Help Center" },
+      { href: "/integrations/home", label: "Integrations" },
+    ],
+  },
+  {
+    title: "Socials",
+    links: [
+      {
+        href: "https://twitter.com/lexingtonthemes",
+        label: "@lexingtonthemes",
+      },
+      { href: "https://twitter.com/Mike_Andreuzza", label: "@Mike_Andreuzza" },
+    ],
+  },
+];
+---
+
+<footer class="relative">
+  <Wrapper variant="standard" class="py-8">
     <div
-      class="pt-12 border-t border-gray-200 gap-12 grid xl:grid-cols-3 xl:gap-8"
+      class="items-start pt-12 mt-12 tracking-tight border-t grid grid-cols-2 gap-x-8 gap-y-24 border-base-200"
     >
-      <div class="text-blue-950">
-        <div class="inline-flex items-center gap-3">
-          <span>
-            <svg
-              class="h-4"
-              viewBox="0 0 400 403"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <g clip-path="url(#clip0_1984_346)">
-                <rect
-                  x="156.024"
-                  y="157.229"
-                  width="87.9518"
-                  height="87.9518"
-                  fill="#4d59ee"
-                  stroke="currentColor"
-                  stroke-width="1.20482"></rect>
-                <rect
-                  x="89.759"
-                  y="0.60241"
-                  width="87.9518"
-                  height="87.9518"
-                  fill="#4d59ee"
-                  stroke="currentColor"
-                  stroke-width="1.20482"></rect>
-                <rect
-                  x="0.60241"
-                  y="89.759"
-                  width="87.9518"
-                  height="87.9518"
-                  fill="#4d59ee"
-                  stroke="currentColor"
-                  stroke-width="1.20482"></rect>
-                <rect
-                  x="311.446"
-                  y="89.759"
-                  width="87.9518"
-                  height="87.9518"
-                  fill="#4d59ee"
-                  stroke="currentColor"
-                  stroke-width="1.20482"></rect>
-                <rect
-                  x="311.446"
-                  y="224.699"
-                  width="87.9518"
-                  height="87.9518"
-                  fill="#4d59ee"
-                  stroke="currentColor"
-                  stroke-width="1.20482"></rect>
-                <rect
-                  x="222.289"
-                  y="313.855"
-                  width="87.9518"
-                  height="87.9518"
-                  fill="#4d59ee"
-                  stroke="currentColor"
-                  stroke-width="1.20482"></rect>
-                <rect
-                  x="89.759"
-                  y="313.855"
-                  width="87.9518"
-                  height="87.9518"
-                  fill="#4d59ee"
-                  stroke="currentColor"
-                  stroke-width="1.20482"></rect>
-                <rect
-                  x="0.60241"
-                  y="224.699"
-                  width="87.9518"
-                  height="87.9518"
-                  fill="#4d59ee"
-                  stroke="currentColor"
-                  stroke-width="1.20482"></rect>
-                <rect
-                  x="222.289"
-                  y="0.60241"
-                  width="87.9518"
-                  height="87.9518"
-                  fill="#4d59ee"
-                  stroke="currentColor"
-                  stroke-width="1.20482"></rect>
-              </g>
-              <defs>
-                <clipPath id="clip0_1984_346">
-                  <rect width="400" height="402.41" fill="white"></rect>
-                </clipPath>
-              </defs>
-            </svg>
-          </span><p
-            class="font-mono text-base font-medium tracking-tighter uppercase text-blue-950"
-          >
-            Alfred
-          </p>
-        </div><p class="mt-2">
-          <span class="mt-6 text-sm font-normal text-gray-700">
-            Free and Premium UI Kit's <span class="lg:block"
-              >built with Astro and Tailwind CSS.</span
-            ></span
-          >
-        </p>
+      <div class="items-start tracking-tight grid grid-cols-2 gap-x-8 gap-y-12">
+        {
+          footerLinks.map((section) => (
+            <div>
+              <Text
+                tag="h3"
+                variant="textBase"
+                class="font-medium text-base-600"
+              >
+                {section.title}
+              </Text>
+              <ul role="list" class="mt-4 space-y-2">
+                {section.links.map((link) => (
+                  <li>
+                    <a
+                      class="text-base-500  hover:text-base-800"
+                      href={link.href}
+                    >
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))
+        }
       </div>
-      <div
-        class="grid items-start grid-cols-2 gap-8 text-sm tracking-tight text-gray-700 mt-12font-mono lg:mt-0 xl:col-span-2"
-      >
-        <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
-          <div>
-            <h3
-              class="font-mono text-base font-medium tracking-tighter uppercase text-blue-950"
+      <div class="flex flex-col justify-between h-full p-8 bg-base-50">
+        <Text
+          tag="p"
+          variant="displaySM"
+          class="md:max-w-sm text-base-800 text-balance"
+          >Stay up to date with Alfred's news.</Text
+        >
+
+        <div>
+          <form class="mt-2 space-y-4" aria-label="Newsletter Signup Form">
+            <div>
+              <label for="email" class="sr-only">Email address</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="name@email.com"
+                required
+                class="w-full text-lg bg-white border-transparent outline-none h-14 text-base-700 placeholder-base-400 focus:ring-inset focus:ring-base-800 focus:border-base-800"
+              />
+            </div>
+            <Button
+              type="submit"
+              size="xl"
+              variant="default"
+              type="submit"
+              class="w-full"
             >
-              Navigation
-            </h3><ul role="list" class="mt-4 space-y-2">
-              <li>
-                <a
-                  href="/"
-                  title="your link title"
-                  aria-label="your links label"
-                  class="hover:text-blue-950"
-                >
-                  Overview</a
-                >
-              </li>
-              <li>
-                <a
-                  href="/system/styleguide"
-                  title="your link title"
-                  aria-label="your links label"
-                  class="hover:text-blue-950"
-                >
-                  Style Gudie
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h3
-              class="font-mono text-base font-medium tracking-tighter uppercase text-blue-950"
+              Signup
+            </Button>
+          </form>
+
+          <Text
+            tag="p"
+            variant="textXS"
+            class="mt-2 leading-relaxed text-base-500"
+          >
+            By signing up, you agree that Alfred may contact you about our
+            products and services. You can unsubscribe at any time. See Alfred's
+            <a href="/infopages/privacy" class="underline hover:text-base-700"
+              >Privacy Statement</a
             >
-              Stay updated
-            </h3>
-            <ul role="list" class="mt-4 space-y-2">
-              <li>
-                <a
-                  href="https://www.lexingtonthemes.com/legal/license"
-                  title="your link title"
-                  aria-label="your links label"
-                  class="hover:text-blue-950"
-                >
-                  License
-                </a>
-              </li><li>
-                <a
-                  href="https://www.lexingtonthemes.com/documentation"
-                  title="your link title"
-                  aria-label="your links label"
-                  class="hover:text-blue-950"
-                >
-                  Documentation
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
-          <div>
-            <h3
-              class="font-mono text-base font-medium tracking-tighter uppercase text-blue-950"
-            >
-              Socials
-            </h3>
-            <ul role="list" class="mt-4 space-y-2">
-              <li>
-                <a
-                  href="https://twitter.com/lexingtonthemes"
-                  title="your link title"
-                  aria-label="your links label"
-                  class="hover:text-blue-950"
-                >
-                  @lexingtonthemes
-                </a>
-              </li><li>
-                <a
-                  href="https://twitter.com/Mike_Andreuzza"
-                  title="your link title"
-                  aria-label="your links label"
-                  class="hover:text-blue-950"
-                >
-                  @Mike_Andreuzza
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h3
-              class="font-mono text-base font-medium tracking-tighter uppercase text-blue-950"
-            >
-              More Themes
-            </h3><ul role="list" class="mt-4 space-y-2">
-              <li>
-                <a
-                  href="https://lexingtonthemes.com/"
-                  title="your link title"
-                  aria-label="your links label"
-                  class="hover:text-blue-950"
-                >
-                  Lexington Themes
-                </a>
-              </li>
-            </ul>
-          </div>
+            for more information on how we handle your data.
+          </Text>
         </div>
       </div>
     </div>
-  </div>
-</footer>
-
-<footer class="text-gray-700 bg-white border-t border-gray-200">
-  <div class="max-w-screen-xl px-8 py-12 mx-auto md:px-12 lg:px-32">
-    <nav
-      class="flex flex-col gap-8 lg:flex-row font-mono text-xs font-medium tracking-tight text-blue-700 uppercase"
-    >
-      <a
-        class="relative px-3 py-2 hover:text-blue-950"
-        href="/#process"
-        title="your link title"
-        aria-label="your links label">Terms of use</a
-      >
-      <a
-        class="relative px-3 py-2 hover:text-blue-950"
-        href="/#benefits"
-        title="your link title"
-        aria-label="your links label">Responsible disclosure</a
-      ><a
-        class="relative px-3 py-2 hover:text-blue-950"
-        href="/#pricing"
-        title="your link title"
-        aria-label="your links label">Privacy</a
-      >
-    </nav><section class="mt-6 gap-x-8 gap-y-6 text-slate-500">
-      <div>
-        <p class="text-sm lg:col-span-2">
-          © 2023 Lexington Themes. All rights reserved. Lexington Themes is not
-          affiliated with Astro or Tailwind Labs team, nor is it endorsed by or
-          sponsored by this ones. A side project by <a
-            href="https://michaelandreuzza.com/"
-            title="your link title"
-            aria-label="your links label"
-            class="hover:text-blue-950">Michael Andreuzza</a
-          > This website was built with Astro &amp; Tailwind. Crafted in Åland Islands,
-          Finland.
-        </p>
-      </div>
-    </section>
-  </div>
+  </Wrapper>
 </footer>

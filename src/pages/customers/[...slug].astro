@@ -1,6 +1,6 @@
 ---
 import { getCollection } from "astro:content";
-import CustomersLayout from "../../layouts/CustomersLayout.astro";
+import CustomersLayout from "@/layouts/CustomersLayout.astro";
 export async function getStaticPaths() {
   const customers = await getCollection("customers");
   const paths = customers.map((page) => {

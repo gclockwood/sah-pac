@@ -1,6 +1,6 @@
 ---
 import { getCollection } from "astro:content";
-import HelpcenterLayout from "../../layouts/HelpcenterLayout.astro";
+import HelpcenterLayout from "@/layouts/HelpcenterLayout.astro";
 export async function getStaticPaths() {
   const helpcenter = await getCollection("helpcenter");
   const paths = helpcenter.map((page) => {

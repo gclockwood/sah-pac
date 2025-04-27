@@ -6,49 +6,114 @@ const helpcenter = defineCollection({
   }),
 });
 const changelog = defineCollection({
-  schema: z.object({
-    title: z.string(),
-    intro: z.string(),
-    pubDate: z.date(),
-  }),
+  schema: ({ image }) =>
+    z.object({
+      page: z.string(),
+      description: z.string(),
+      pubDate: z.date(),
+      image: z.object({
+        url: image(), 
+        alt: z.string(),
+      }),
+    }),
 });
+
 const infopages = defineCollection({
   schema: z.object({
     page: z.string(),
     pubDate: z.date(),
   }),
 });
-const customers = defineCollection({
-  schema: z.object({
-    story: z.string(),
-    about: z.string(),
-    founded: z.string(),
-    website: z.string(),
-    industry: z.string(),
-    headquarters: z.string(),
-    logo: z.object({
-      url: z.string(),
-      alt: z.string(),
+const integrations = defineCollection({
+  schema: ({ image }) =>
+    z.object({
+      email: z.string(),
+      integration: z.string(),
+      description: z.string(),
+      permissions: z.array(z.string()),
+      details: z.array(
+        z.object({
+          title: z.string(),
+          value: z.string(),
+          url: z.optional(z.string()),
+        })
+      ),
+      logo: z.object({
+        url: image(),
+        alt: z.string(),
+      }),
+      tags: z.array(z.string()),
     }),
-  }),
 });
-const postsCollection = defineCollection({
-  schema: z.object({
-    title: z.string(),
-    pubDate: z.date(),
-    description: z.string(),
-    author: z.string(),
-    image: z.object({
-      url: z.string(),
-      alt: z.string(),
+const team = defineCollection({
+  schema: ({ image }) =>
+    z.object({
+      name: z.string(),
+      role: z.string().optional(),
+      bio: z.string().optional(),
+      image: z.object({
+        url: image(),
+        alt: z.string(),
+      }),
+      socials: z
+        .object({
+          twitter: z.string().optional(),
+          website: z.string().optional(),
+          linkedin: z.string().optional(),
+          email: z.string().optional(),
+        })
+        .optional(),
     }),
-    tags: z.array(z.string()),
-  }),
+});
+
+const postsCollection = defineCollection({
+  schema: ({ image }) =>
+    z.object({
+      title: z.string(),
+      pubDate: z.date(),
+      description: z.string(),
+      team: z.string(),
+      image: z.object({
+        url: image(), 
+        alt: z.string(),
+      }),
+      tags: z.array(z.string()),
+    }),
+});
+
+const customers = defineCollection({
+  schema: ({ image }) =>
+    z.object({
+      customer: z.string(),
+      bgColor: z.string().optional(),
+      ctaTitle: z.string().optional(),
+      testimonial: z.string().optional(),
+      partnership: z.string().optional(),
+      avatar: z.object({
+        url: image(),
+        alt: z.string(),
+      }),
+      challengesAndSolutions: z.array(
+        z.object({
+          title: z.string(),
+          content: z.string(),
+        })
+      ),
+      results: z.array(z.string()),
+      about: z.string(),
+      details: z.record(z.string()),
+      logo: z.object({
+        url: image(),
+        alt: z.string(),
+      }),
+    }),
 });
 export const collections = {
-  helpcenter: helpcenter,
-  changelog: changelog,
-  infopages: infopages,
+  team: team,
   customers: customers,
+  infopages: infopages,
+  changelog: changelog,
+  helpcenter: helpcenter,
   posts: postsCollection,
+  integrations: integrations,
 };

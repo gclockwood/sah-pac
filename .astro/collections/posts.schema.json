@@ -26,7 +26,7 @@
         "description": {
           "type": "string"
         },
-        "author": {
+        "team": {
           "type": "string"
         },
         "image": {
@@ -59,7 +59,7 @@
         "title",
         "pubDate",
         "description",
-        "author",
+        "team",
         "image",
         "tags"
       ],

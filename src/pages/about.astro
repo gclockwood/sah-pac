@@ -6,7 +6,6 @@ import LogoCloud from "@/components/assets/LogoCloud.astro";
 // Fundations
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import Text from "@/components/fundations/elements/Text.astro";
-import Link from "@/components/fundations/elements/Link.astro";
 import Wrapper from "@/components/fundations/containers/Wrapper.astro";
 ---
 
@@ -53,22 +52,24 @@ import Wrapper from "@/components/fundations/containers/Wrapper.astro";
       </div>
     </Wrapper>
   </section>
-  <section>
+  <section class="overflow-x-hidden">
     <Wrapper variant="standard" class="relative py-12">
-      <div class="relative overflow-hidden min-h-200">
-        <Image
-          src={Glass}
-          alt="Background Glass Image"
-          width={800}
-          height={800}
-          loading="eager"
-          decoding="async"
-          class="absolute inset-0 object-cover object-center w-full max-h-200"
-        />
-        <div
-          class="absolute inset-0 z-10 flex flex-col items-center justify-center p-8"
-        >
-          <Text tag="h2" variant="displayLG" class="text-center text-white">
+      <div class="relative py-32 lg:py-72">
+        {/* Clip only the background image */}
+        <div class="absolute inset-0 overflow-hidden">
+          <Image
+            src={Glass}
+            alt="Background Glass Image"
+            width={800}
+            height={800}
+            loading="eager"
+            decoding="async"
+            class="w-full h-full object-cover object-center"
+          />
+        </div>
+
+        <div class="relative z-10 mx-auto px-4 text-center">
+          <Text tag="h2" variant="displaySM" class="text-white text-balance">
             We started with a simple idea: productivity shouldn't feel
             overwhelming. Built by a small team of designers, engineers, and
             makers, our platform was created to help people organize their time,
@@ -78,7 +79,8 @@ import Wrapper from "@/components/fundations/containers/Wrapper.astro";
           </Text>
         </div>
       </div>
-      <LogoCloud class="mt-12 invert md:invert-0" />
+
+      <LogoCloud class="mt-12" />
     </Wrapper>
   </section>
 </BaseLayout>

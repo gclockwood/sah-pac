@@ -83,13 +83,13 @@ const dropdowns = [
       <!-- Fullscreen nav on mobile -->
       <nav
         id="navMenu"
-        class="fixed inset-0 z-40 flex-col hidden w-full p-8 mt-12 bg-white md:mt-0 md:p-0 md:border-l md:border-base-200 md:items-center md:justify-end gap-2 md:gap-0 sm:relative md:flex md:flex-row md:bg-transparent md:static"
+        class="fixed inset-0 z-40 flex-col hidden w-full p-8 mt-20 bg-white md:mt-0 md:p-0 md:border-l md:border-base-200 md:items-center md:justify-end gap-2 md:gap-px sm:relative md:flex md:flex-row md:bg-transparent md:static"
         role="navigation"
         aria-label="Main navigation"
       >
         {
           dropdowns.map((dropdown) => (
-            <ul role="menu">
+            <ul role="menu" >
               <li class="relative w-full group/menu md:w-auto" tabindex="-1">
                 <Button
                   size="md"
@@ -98,7 +98,7 @@ const dropdowns = [
                   aria-expanded="false"
                   aria-controls={dropdown.id}
                   data-menu-button={dropdown.id}
-                  class="w-full h-full text-sm font-medium dropdown-toggle focus:outline-none md:w-auto "
+                  class="w-full h-full text-sm font-medium dropdown-toggle focus:outline-none md:w-fit "
                 >
                   {dropdown.label}
                 </Button>

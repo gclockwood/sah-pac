@@ -1,0 +1,274 @@
+# .pages.yml — Pages CMS config (images live in src/images)
+
+media:
+  - name: assets
+    label: Assets
+    input: src/images/assets
+    output: src/images/assets
+    path: ""
+    extensions: [png, jpg, jpeg, webp, svg]
+
+  - name: blog
+    label: Blog Images
+    input: src/images/blog
+    output: src/images/blog
+    path: ""
+    extensions: [png, jpg, jpeg, webp, svg]
+
+  - name: changelog
+    label: Changelog Images
+    input: src/images/changelog
+    output: src/images/changelog
+    path: ""
+    extensions: [png, jpg, jpeg, webp, svg]
+
+  - name: customers
+    label: Customer Images
+    input: src/images/customers
+    output: src/images/customers
+    path: ""
+    extensions: [png, jpg, jpeg, webp, svg]
+
+  - name: integrations
+    label: Integration Logos
+    input: src/images/integrations
+    output: src/images/integrations
+    path: ""
+    extensions: [png, jpg, jpeg, webp, svg]
+
+  - name: team
+    label: Team Avatars
+    input: src/images/team
+    output: src/images/team
+    path: ""
+    extensions: [png, jpg, jpeg, webp, svg]
+
+settings:
+  content:
+    merge: true
+
+content:
+  # ---------------------
+  # HELP CENTER
+  # ---------------------
+  - name: helpcenter
+    label: Help Center
+    type: collection
+    path: src/content/helpcenter
+    filename: "{year}{month}{day}-{hour}{minute}{second}.md"
+    view:
+      primary: title
+      fields: [title]
+      sort: [title]
+    fields:
+      - { name: title, label: Title, type: string, required: true }
+      - { name: intro, label: Intro, type: text }
+      - { name: body, label: Body, type: rich-text }
+
+  # ---------------------
+  # CHANGELOG
+  # ---------------------
+  - name: changelog
+    label: Changelog
+    type: collection
+    path: src/content/changelog
+    filename: "{year}{month}{day}-{hour}{minute}{second}.md"
+    view:
+      primary: page
+      fields: [page, pubDate]
+      sort: [pubDate]
+      default:
+        sort: pubDate
+        order: desc
+    fields:
+      - { name: page,        label: Page,        type: string, required: true }
+      - { name: description, label: Description, type: text }
+      - { name: pubDate,     label: Publication Date, type: date }
+      - name: image
+        label: Image
+        type: object
+        fields:
+          - name: url
+            label: Image
+            type: image
+            options: { media: changelog }
+          - { name: alt, label: Alt text, type: string }
+      - { name: body, label: Body, type: rich-text }
+
+  # ---------------------
+  # INFO PAGES
+  # ---------------------
+  - name: infopages
+    label: Info Pages
+    type: collection
+    path: src/content/infopages
+    filename: "{year}{month}{day}-{hour}{minute}{second}.md"
+    view:
+      primary: page
+      fields: [page, pubDate]
+      sort: [page]
+    fields:
+      - { name: page,    label: Page,     type: string, required: true }
+      - { name: pubDate, label: Publication Date, type: date }
+      - { name: body,    label: Body,     type: rich-text }
+
+  # ---------------------
+  # INTEGRATIONS
+  # ---------------------
+  - name: integrations
+    label: Integrations
+    type: collection
+    path: src/content/integrations
+    filename: "{year}{month}{day}-{hour}{minute}{second}.md"
+    view:
+      primary: integration
+      fields: [integration, email]
+      sort: [integration]
+    fields:
+      - { name: email,        label: Email,        type: string }
+      - { name: integration,  label: Integration,  type: string, required: true }
+      - { name: description,  label: Description,  type: text }
+      - name: permissions
+        label: Permissions
+        type: string
+        list: true
+      - name: details
+        label: Details
+        type: object
+        list: true
+        fields:
+          - { name: title, label: Title, type: string }
+          - { name: value, label: Value, type: string }
+          - { name: url,   label: URL,   type: string }
+      - name: logo
+        label: Logo
+        type: object
+        fields:
+          - name: url
+            label: Image
+            type: image
+            options: { media: integrations }
+          - { name: alt, label: Alt text, type: string }
+      - { name: tags, label: Tags, type: string, list: true }
+      - { name: body, label: Body, type: rich-text }
+
+  # ---------------------
+  # TEAM
+  # ---------------------
+  - name: team
+    label: Team
+    type: collection
+    path: src/content/team
+    filename: "{year}{month}{day}-{hour}{minute}{second}.md"
+    view:
+      primary: name
+      fields: [name, role]
+      sort: [name]
+    fields:
+      - { name: name,  label: Name,  type: string, required: true }
+      - { name: role,  label: Role,  type: string }
+      - { name: bio,   label: Bio,   type: text }
+      - name: image
+        label: Image
+        type: object
+        fields:
+          - name: url
+            label: Image
+            type: image
+            options: { media: team }
+          - { name: alt, label: Alt text, type: string }
+      - name: socials
+        label: Socials
+        type: object
+        fields:
+          - { name: twitter,  label: Twitter,  type: string }
+          - { name: website,  label: Website,  type: string }
+          - { name: linkedin, label: LinkedIn, type: string }
+          - { name: email,    label: Email,    type: string }
+      - { name: body, label: Body, type: rich-text }
+
+  # ---------------------
+  # CUSTOMERS
+  # ---------------------
+  - name: customers
+    label: Customers
+    type: collection
+    path: src/content/customers
+    filename: "{year}{month}{day}-{hour}{minute}{second}.md"
+    view:
+      primary: customer
+      fields: [customer]
+      sort: [customer]
+    fields:
+      - { name: customer,     label: Customer,     type: string, required: true }
+      - { name: bgColor,      label: BG Color,     type: string }
+      - { name: ctaTitle,     label: CTA Title,    type: string }
+      - { name: testimonial,  label: Testimonial,  type: text }
+      - { name: partnership,  label: Partnership,  type: string }
+      - name: avatar
+        label: Avatar
+        type: object
+        fields:
+          - name: url
+            label: Image
+            type: image
+            options: { media: customers }
+          - { name: alt, label: Alt text, type: string }
+      - name: challengesAndSolutions
+        label: Challenges & Solutions
+        type: object
+        list: true
+        fields:
+          - { name: title,   label: Title,   type: string }
+          - { name: content, label: Content, type: text }
+      - { name: results, label: Results, type: string, list: true }
+      - { name: about,   label: About,   type: text }
+      - name: details
+        label: Details (key/value)
+        type: object
+        list: true
+        fields:
+          - { name: key,   label: Key,   type: string }
+          - { name: value, label: Value, type: string }
+      - name: logo
+        label: Logo
+        type: object
+        fields:
+          - name: url
+            label: Image
+            type: image
+            options: { media: customers }
+          - { name: alt, label: Alt text, type: string }
+      - { name: body, label: Body, type: rich-text }
+
+  # ---------------------
+  # POSTS
+  # ---------------------
+  - name: posts
+    label: Posts
+    type: collection
+    path: src/content/posts
+    filename: "{year}{month}{day}-{hour}{minute}{second}.md"
+    view:
+      primary: title
+      fields: [title, pubDate, team]
+      sort: [pubDate]
+      default:
+        sort: pubDate
+        order: desc
+    fields:
+      - { name: title,       label: Title,       type: string, required: true }
+      - { name: pubDate,     label: Publication Date, type: date }
+      - { name: description, label: Description, type: text }
+      - { name: team,        label: Team,        type: string }
+      - name: image
+        label: Cover Image
+        type: object
+        fields:
+          - name: url
+            label: Image
+            type: image
+            options: { media: blog }
+          - { name: alt, label: Alt text, type: string }
+      - { name: tags, label: Tags, type: string, list: true }
+      - { name: body, label: Body, type: rich-text }

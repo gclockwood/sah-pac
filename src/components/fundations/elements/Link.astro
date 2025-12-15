@@ -11,26 +11,28 @@ const {
 // Default button
 const defaultClass = [
   "text-white ",
-  "bg-black",
+  "bg-content-gray",
   "hover:bg-base-700",
-  "ring-black",
+  "ring-content-gray",
   "hover:ring-base-800",
 ];
 // Accent button
 const accentClass = [
   "text-white ",
-  "bg-teal-600",
-  "hover:bg-teal-700",
-  "ring-teal-600",
-  "hover:ring-teal-800",
+  "bg-navy-blue",
+  "hover:bg-primary-blue",
+  "ring-navy-blue",
+  "hover:ring-accent-blue",
 ];
 // Muted button
 const mutedClass = [
-  "text-black ",
+  "text-content-gray ",
   "bg-white",
   "ring-base-200",
-  "hover:ring-black",
+  "hover:ring-content-gray",
 ];
+
+
 // Size (only applies if variant is not "link")
 const xs = ["h-8", "px-3.5", "py-2", "text-xs"];
 const sm = ["h-9", "px-4", "py-2", "text-sm"];
@@ -53,6 +55,7 @@ const additionalClasses = className ? className.split(" ") : [];
     ...(variant === "link"
       ? [...additionalClasses]
       : [
+          "relative",
           "flex",
           "text-center",
           "font-medium",
@@ -65,6 +68,7 @@ const additionalClasses = className ? className.split(" ") : [];
           "duration-300",
           "ease-in-out",
           "transition-all",
+          "hover:z-10",
           variant === "muted" && mutedClass,
           variant === "accent" && accentClass,
           variant === "default" && defaultClass,

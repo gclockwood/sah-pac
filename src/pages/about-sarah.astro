@@ -1,0 +1,327 @@
+---
+import { Image } from "astro:assets";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Text from "@/components/fundations/elements/Text.astro";
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+
+// Import family images
+import Image1 from "@/images/family/IMG_2104.webp";
+import Image2 from "@/images/family/IMG_3877.jpg";
+import Image3 from "@/images/family/IMG_3436.jpg";
+import Image4 from "@/images/family/IMG_3438.jpg";
+---
+
+<BaseLayout>
+  <Wrapper variant="standard" class="pt-30 pb-8 overflow-hidden lg:pt-50">
+    <section>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+      <!-- Left Column: Text Content -->
+      <div class="order-2 lg:order-1 space-y-6 animate-fade-in-up">
+        <Text
+          tag="h1"
+          variant="displayLG"
+          class="text-navy-blue mb-6 font-serif"
+        >
+          About Sarah
+        </Text>
+        
+        <Text
+          tag="p"
+          variant="textLG"
+          class="text-content-gray leading-relaxed"
+        >
+          Welcome to my world! I'm Sarah, a passionate creator, designer, and storyteller 
+          who finds inspiration in the everyday moments that make life beautiful. 
+        </Text>
+        
+        <Text
+          tag="p"
+          variant="textBase"
+          class="text-content-gray leading-relaxed"
+        >
+          With a background in design and a love for authentic connections, I've spent 
+          years crafting experiences that resonate with people on a personal level. 
+          Whether I'm working on a new project, exploring creative solutions, or simply 
+          enjoying time with family and friends, I believe in bringing intention and 
+          heart to everything I do.
+        </Text>
+        
+        <Text
+          tag="p"
+          variant="textBase"
+          class="text-content-gray leading-relaxed"
+        >
+          My approach is rooted in curiosity, empathy, and a commitment to continuous 
+          learning. I'm fascinated by how design, technology, and human stories intersect, 
+          and I'm always looking for new ways to create meaningful impact through my work.
+        </Text>
+        
+        <Text
+          tag="p"
+          variant="textBase"
+          class="text-content-gray leading-relaxed"
+        >
+          When I'm not working, you'll find me exploring new places, capturing moments 
+          through photography, or simply enjoying the simple pleasures of life. These 
+          experiences fuel my creativity and remind me of what truly matters.
+        </Text>
+
+        <Text
+          tag="h2"
+          variant="displayMD"
+          class="text-navy-blue mt-8 mb-4 font-serif"
+        >
+          My Journey
+        </Text>
+        
+        <Text
+          tag="p"
+          variant="textBase"
+          class="text-content-gray leading-relaxed"
+        >
+          My professional journey has been anything but linear. I've had the privilege of 
+          working with diverse teams, from startups to established companies, each experience 
+          teaching me something new about collaboration, innovation, and the power of 
+          thoughtful design. What connects all these experiences is my belief that great 
+          work comes from understanding people deeply and designing with their needs, 
+          desires, and emotions in mind.
+        </Text>
+        
+        <Text
+          tag="p"
+          variant="textBase"
+          class="text-content-gray leading-relaxed"
+        >
+          Over the years, I've learned that the best solutions often emerge from the 
+          intersection of different perspectives. I thrive in collaborative environments 
+          where ideas can flow freely, where questions are welcomed, and where the goal 
+          is always to create something that truly serves its purpose.
+        </Text>
+
+        <Text
+          tag="h2"
+          variant="displayMD"
+          class="text-navy-blue mt-8 mb-4 font-serif"
+        >
+          What Drives Me
+        </Text>
+        
+        <Text
+          tag="p"
+          variant="textBase"
+          class="text-content-gray leading-relaxed"
+        >
+          I'm driven by the belief that design has the power to make life better—not just 
+          more beautiful, but more functional, more accessible, and more meaningful. Every 
+          project I take on is an opportunity to solve a problem, tell a story, or create 
+          a connection that didn't exist before.
+        </Text>
+        
+        <Text
+          tag="p"
+          variant="textBase"
+          class="text-content-gray leading-relaxed"
+        >
+          I'm particularly passionate about creating experiences that feel intuitive and 
+          delightful. There's something magical about the moment when a user interacts with 
+          something I've designed and it just works—when the interface feels natural, the 
+          flow makes sense, and the experience leaves them feeling empowered rather than 
+          frustrated.
+        </Text>
+
+        <Text
+          tag="h2"
+          variant="displayMD"
+          class="text-navy-blue mt-8 mb-4 font-serif"
+        >
+          Beyond Work
+        </Text>
+        
+        <Text
+          tag="p"
+          variant="textBase"
+          class="text-content-gray leading-relaxed"
+        >
+          When I step away from my desk, I'm an avid photographer, a curious traveler, and 
+          someone who finds joy in the small moments. Whether it's a morning walk, a 
+          conversation with a friend, or discovering a new favorite coffee shop, I believe 
+          these experiences enrich my perspective and inform my creative work.
+        </Text>
+        
+        <Text
+          tag="p"
+          variant="textBase"
+          class="text-content-gray leading-relaxed"
+        >
+          Family and relationships are at the core of who I am. The time I spend with loved 
+          ones, the memories we create together, and the stories we share—these are the 
+          things that ground me and remind me why the work I do matters. They're also a 
+          constant source of inspiration, showing me the beauty in everyday moments and the 
+          importance of creating spaces where people can connect authentically.
+        </Text>
+      </div>
+
+      <!-- Right Column: Images Gallery -->
+      <div class="order-1 lg:order-2 lg:sticky lg:top-24">
+        <div class="grid grid-cols-2 gap-4 md:gap-6 max-w-lg mx-auto lg:max-w-none">
+          <!-- Image 1 - Top Left, Medium Size -->
+          <div class="col-span-1 animate-slide-in-right delay-100">
+            <div class="relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 group aspect-[3/4]">
+              <Image
+                src={Image1}
+                alt="Sarah - Family moment"
+                width={400}
+                height={500}
+                class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+          </div>
+
+          <!-- Image 2 - Top Right, Small Size -->
+          <div class="col-span-1 mt-8 md:mt-12 animate-slide-in-left delay-200">
+            <div class="relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 group aspect-[4/5]">
+              <Image
+                src={Image2}
+                alt="Sarah - Personal moment"
+                width={350}
+                height={400}
+                class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+          </div>
+
+          <!-- Image 3 - Bottom Left, Large Size -->
+          <div class="col-span-1 -mt-4 md:-mt-6 animate-slide-in-up delay-300">
+            <div class="relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 group aspect-[3/4]">
+              <Image
+                src={Image3}
+                alt="Sarah - Special occasion"
+                width={500}
+                height={600}
+                class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+          </div>
+
+          <!-- Image 4 - Bottom Right, Medium Size -->
+          <div class="col-span-1 mt-4 md:mt-6 animate-fade-in delay-400">
+            <div class="relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 group aspect-[4/5]">
+              <Image
+                src={Image4}
+                alt="Sarah - Cherished memory"
+                width={400}
+                height={450}
+                class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </Wrapper>
+</BaseLayout>
+
+<style>
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slide-in-right {
+    from {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slide-in-left {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slide-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 0.8s ease-out forwards;
+  }
+
+  .animate-slide-in-right {
+    animation: slide-in-right 0.8s ease-out forwards;
+  }
+
+  .animate-slide-in-left {
+    animation: slide-in-left 0.8s ease-out forwards;
+  }
+
+  .animate-slide-in-up {
+    animation: slide-in-up 0.8s ease-out forwards;
+  }
+
+  .animate-fade-in {
+    animation: fade-in 1s ease-out forwards;
+  }
+
+  .delay-100 {
+    animation-delay: 0.1s;
+    opacity: 0;
+  }
+
+  .delay-200 {
+    animation-delay: 0.2s;
+    opacity: 0;
+  }
+
+  .delay-300 {
+    animation-delay: 0.3s;
+    opacity: 0;
+  }
+
+  .delay-400 {
+    animation-delay: 0.4s;
+    opacity: 0;
+  }
+
+  /* Responsive adjustments for mobile */
+  @media (max-width: 768px) {
+    .animate-slide-in-right,
+    .animate-slide-in-left,
+    .animate-slide-in-up {
+      animation-duration: 0.6s;
+    }
+  }
+</style>
+

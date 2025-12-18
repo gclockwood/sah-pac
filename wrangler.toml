@@ -1,0 +1,8 @@
+name = "sah-pac-worker"
+main = "wrangler.js"
+compatibility_date = "2024-12-15"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "sah-pac"
+database_id = "57de0e87-a08a-43e7-afd0-7ce9ed8deb9e"

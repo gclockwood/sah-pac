@@ -21,5 +21,8 @@
     "astro": "^5.13.7",
     "tailwind-scrollbar-hide": "^4.0.0",
     "tailwindcss": "^4.1.13"
+  },
+  "devDependencies": {
+    "wrangler": "^4.54.0"
   }
 }

@@ -8,121 +8,95 @@ import IntegrationsWidget from "@/components/featureWidgets/IntegrationsWidget.a
 // Fundations
 import Text from "@/components/fundations/elements/Text.astro";
 import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+import Boats from "@/images/assets/lobster-boat.webp"
+import {Image} from "astro:assets";
+import Rockport from "@/images/assets/rockport-harbor.webp";
+import House from "@/images/assets/houses.jpg";
+
 ---
 
-<section>
+<section id="issues">
   <Wrapper variant="standard" class="py-12">
     <div class="grid grid-cols-1 gap-8 md:grid-cols-4 md:items-end">
       <div>
         <Text
-          tag="h2"
-          variant="displaySM"
-          class="font-medium tracking-tight text-base-800 text-balance"
+          tag="h1"
+          variant="displayLG"
+          class="text-navy-blue mb-6 font-serif"
         >
-          Tools that actually pull their weight
+          Issues that matter to Sarah
         </Text>
       </div>
-      <Text
-        tag="p"
-        variant="textLG"
-        class="mt-4 text-base-600 lg:text-balance md:col-span-2 md:col-start-3"
-      >
-        NDitch the fluff. Get the stuff that helps you move faster, think
-        smarter, and actually get things done.
-      </Text>
     </div>
     <div class="mt-12 grid grid-cols-1 gap-8 lg:grid-cols-6">
-      <div
-        class="relative p-4 overflow-hidden bg-teal-100 lg:col-span-3 lg:p-12"
-      >
+      <div class="relative p-4 overflow-hidden lg:col-span-2 lg:p-8 bg-light-blue">
         <div class="relative flex flex-col justify-start h-full">
           <div>
-            <Text tag="h3" variant="textXL" class="font-medium text-teal-950">
-              Data that actually does something
-            </Text>
-            <Text
-              tag="p"
-              variant="textLG"
-              class="mt-2 text-base-600 text-balance"
-            >
-              Stop squinting at charts. Make faster, smarter decisions with
-              insights that actually matter to your business.
-            </Text>
-          </div>
-          <div class="relative mt-12 -mr-16">
-            <DataWidget />
-          </div>
-        </div>
-      </div>
-      <div
-        class="relative p-4 overflow-hidden lg:col-span-3 lg:p-12 bg-purple-50"
-      >
-        <div class="relative flex flex-col justify-start h-full">
-          <div>
-            <Text tag="h3" variant="textXL" class="font-medium text-purple-900"
-              >Teamwork, minus the chaos Data that works
-            </Text>
-            <Text
-              tag="p"
-              variant="textLG"
-              class="mt-2 text-base-600 text-balance"
-            >
-              Ping less, achieve more. Real-time updates and shared progress
-              that don’t require a group therapy session.
-            </Text>
-          </div>
-          <div class="relative mt-12 -mr-16">
-            <TeamWorkWidget />
-          </div>
-        </div>
-      </div>
-      <div class="relative p-4 overflow-hidden lg:col-span-2 lg:p-8 bg-blue-50">
-        <div class="relative flex flex-col justify-start h-full">
-          <div>
-            <Text tag="h3" variant="textXL" class="font-medium text-blue-900">
-              Your files, your clones
+            <Text tag="h3" variant="textXL" class="font-medium text-content-gray">
+              Commerce
             </Text>
             <Text tag="p" variant="textLG" class="mt-2 text-base-600">
-              Copy what works. Ditch the repetitive setup and get straight to
-              the productive part.
+              Supporting the variety of business types that exist in Cape Ann.
             </Text>
           </div>
           <div class="relative mt-12 -mr-16">
-            <ClonesWidget />
+              <Image
+                      width={2000}
+                      height={2000}
+                      src={Boats}
+                      alt="#_"
+                      loading="eager"
+                      decoding="async"
+                      class="w-full"
+              />
           </div>
         </div>
       </div>
-      <div class="relative p-4 overflow-hidden lg:col-span-2 lg:p-8 bg-rose-50">
+      <div class="relative p-4 overflow-hidden lg:col-span-2 lg:p-8 bg-light-blue">
         <div class="relative flex flex-col justify-start h-full">
           <div>
-            <Text tag="h3" variant="textXL" class="font-medium text-rose-900">
-              Shortcuts that don’t suck
+            <Text tag="h3" variant="textXL" class="font-medium text-content-gray">
+              Tourism
             </Text>
             <Text tag="p" variant="textLG" class="mt-2 text-base-600">
-              Click less, do more. Access everything important without turning
-              it into a treasure hunt.
+              Sharing Cape Ann in a manner that supports local interests.
             </Text>
           </div>
           <div class="relative mt-12 -mr-16">
-            <ShortcutsWidget />
+              <Image
+                      width={2000}
+                      height={2000}
+                      src={Rockport}
+                      alt="#_"
+                      loading="eager"
+                      decoding="async"
+                      class="w-full"
+              />
           </div>
         </div>
       </div>
       <div
-        class="relative p-4 overflow-hidden lg:col-span-2 lg:p-8 bg-yellow-50"
+        class="relative p-4 overflow-hidden lg:col-span-2 lg:p-8 bg-light-blue"
       >
         <div class="relative flex flex-col justify-start h-full">
           <div>
-            <Text tag="h3" variant="textXL" class="font-medium text-yellow-900">
-              Integrations that don’t break
+            <Text tag="h3" variant="textXL" class="font-medium text-content-gray">
+                Housing
             </Text>
             <Text tag="p" variant="textLG" class="mt-2 text-base-600">
-              Plug into your favorite tools without needing an API degree.
-              Everything just works.
+              Ensuring that Cape Ann stays a sustainable place to live for future generations.
             </Text>
           </div>
           <div class="relative mt-12 -mr-16">
-            <IntegrationsWidget />
+              <Image
+                      width={2000}
+                      height={2000}
+                      src={House}
+                      alt="#_"
+                      loading="eager"
+                      decoding="async"
+                      class="w-full"
+              />
           </div>
         </div>
       </div>

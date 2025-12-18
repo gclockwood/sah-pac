@@ -1,6 +1,6 @@
 ---
 // Assets
-import { Image } from "astro:assets";
+import {Image} from "astro:assets";
 import Dashboard from "@/images/assets/Movies-Filmed-on-Cape-Ann.png";
 import Rockport from "@/images/assets/rockport-harbor.webp"
 // Fundations
@@ -13,6 +13,14 @@ import Feature2 from "@/components/features/Feature2.astro";
 import Feature3 from "@/components/features/Feature3.astro";
 import Feature4 from "@/components/features/Feature4.astro";
 import Cta from "@/components/ctas/Cta.astro";
+
+// Import family images for about-sarah section
+import Image1 from "@/images/family/IMG_2104.webp";
+import Image2 from "@/images/family/IMG_3877.jpg";
+import Image3 from "@/images/family/IMG_3436.jpg";
+import Image4 from "@/images/family/IMG_3438.jpg";
+import Button from "@/components/fundations/elements/Button.astro";
+import Sarah from "@/images/assets/sarah-headshot.jpg";
 ---
 
 <BaseLayout>
@@ -21,15 +29,15 @@ import Cta from "@/components/ctas/Cta.astro";
             <!-- Container -->
             <div class="relative flex flex-col items-center mx-auto lg:flex-row-reverse lg:max-w-5xl lg:mt-12 xl:max-w-full">
                 <!-- Image Column -->
-                <div class="w-full h-64 lg:w-1/2 lg:h-auto">
+                <div class="w-full h-72 lg:w-1/3 lg:h-auto lg:max-w-xs">
                     <Image
                             width={2000}
                             height={2000}
-                            src={Rockport}
+                            src={Sarah}
                             alt="#_"
                             loading="eager"
                             decoding="async"
-                            class="w-full"
+                            class="w-full h-full object-cover"
                     />
                 </div>
                 <!-- Close Image Column -->
@@ -39,17 +47,19 @@ import Cta from "@/components/ctas/Cta.astro";
                         class="max-w-lg bg-white md:max-w-2xl md:z-10 md:shadow-lg md:absolute md:top-0 md:mt-48 lg:w-3/5 lg:left-0 lg:mt-20 lg:ml-20 xl:mt-24 xl:ml-12">
                     <!-- Text Wrapper -->
                     <div class="flex flex-col p-12 md:px-16">
-                        <h2 class="text-2xl font-bold uppercase text-navy-blue lg:text-4xl">Sarah Wilkinson</h2>
-                        <p class="mt-4">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                            ex ea commodo consequat.
-                        </p>
+                        <h2 class="text-2xl font-bold font-serif uppercase text-navy-blue lg:text-4xl">Sarah Wilkinson</h2>
+                        <h3 class="mt-4">
+                            Running to support Cape Ann as a candidate the Fifth Essex State Representative.
+                        </h3>
                         <!-- Button Container -->
                         <div class="mt-8">
-                            <a href="#"
-                               class="inline-block w-full text-center text-lg font-medium text-gray-100 bg-green-600 border-solid border-2 border-gray-600 py-4 px-10 hover:bg-green-800 hover:shadow-md md:w-48">Read
-                                More</a>
+                            <Button
+                                variant="accent"
+                                size="base"
+                                href="/#about-sarah"
+                            >
+                                Learn More
+                            </Button>
                         </div>
                     </div>
                     <!-- Close Text Wrapper -->
@@ -60,38 +70,261 @@ import Cta from "@/components/ctas/Cta.astro";
         </section>
     </Wrapper>
 
-    <Wrapper variant="prose" class="w-full bg-primary-blue h-20 items-center">
-        <div class="flex-wrap items-center">
-            <Text tag="h2" variant="displayLG" class="text-white text-bold">Stay Updated: </Text>
-        </div>
-    </Wrapper>
-
-
-    <Wrapper variant="standard" class="pt-30 pb-8 overflow-hidden lg:pt-82">
+    <Wrapper variant="standard" class="pt-30 pb-8 overflow-hidden lg:pt-50">
+        <section id="about-sarah">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 sm:space-y-8">
       <Text
         tag="h1"
         variant="displayLG"
-        class="max-w-xl text-base-800 text-balance"
-      >
-        The last business platform you'll ever need
+                        class="text-navy-blue mb-4 sm:mb-6 font-serif text-3xl sm:text-4xl lg:text-5xl"
+                >
+                    About Sarah
+                </Text>
+
+                <Text
+                        tag="p"
+                        variant="textLG"
+                        class="text-content-gray leading-relaxed text-lg sm:text-xl"
+                >
+                    Sarah Wilkinson has deep roots in Cape Ann, having lived in Rockport since age six—over 40
+                    years.
       </Text>
-        <div class="mt-12">
+
+                <!-- Image 1 - After intro paragraph -->
+                <div class="my-6 sm:my-8 animate-fade-in-up">
+                    <div class="relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 group">
         <Image
+                                src={Image1}
+                                alt="Sarah - Family moment"
           width={800}
-          height={800}
-          src={Rockport}
-          alt="#_"
-          loading="eager"
-          decoding="async"
-          class="w-full"
+                                height={600}
+                                class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-500"
+                        />
+                    </div>
+                </div>
+
+                <Text
+                        tag="p"
+                        variant="textBase"
+                        class="text-content-gray leading-relaxed text-base sm:text-lg"
+                >
+                    After earning her Bachelor's degree from the University of Massachusetts at Amherst and her MBA
+                    from Suffolk University, she built a successful career in estate management, executive
+                    assistance, and event planning. She managed a local inn, worked in an office at Harvard
+                    University, and served as Director of a start-up nonprofit organization in Boston before
+                    becoming Executive Assistant to a prominent Boston philanthropist. In that role, she managed
+                    multiple properties across Boston, the North Shore, and around the country. Her experience
+                    planning charity, corporate, and personal events for groups ranging from ten to several hundred
+                    people gave her skills in logistics, coordination, and bringing diverse stakeholders together.
+                    Sarah eventually founded Cape Ann Property Services, where she has provided property management
+                    and home services to North Shore clients for years.
+                </Text>
+
+                <!-- Images 2 & 3 - Side by side after first paragraph -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 my-6 sm:my-8">
+                    <div class="animate-slide-in-right delay-100">
+                        <div class="relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 group aspect-[3/4]">
+                            <Image
+                                    src={Image2}
+                                    alt="Sarah - Personal moment"
+                                    width={400}
+                                    height={500}
+                                    class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                            />
+                        </div>
+                    </div>
+                    <div class="animate-slide-in-left delay-200">
+                        <div class="relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 group aspect-[3/4]">
+                            <Image
+                                    src={Image3}
+                                    alt="Sarah - Special occasion"
+                                    width={400}
+                                    height={500}
+                                    class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                            />
+                        </div>
+                    </div>
+                </div>
+
+                <Text
+                        tag="h2"
+                        variant="displayMD"
+                        class="text-navy-blue mt-6 sm:mt-8 mb-3 sm:mb-4 font-serif text-2xl sm:text-3xl lg:text-4xl"
+                >
+                    Sarah's public service...
+                </Text>
+
+                <Text
+                        tag="p"
+                        variant="textBase"
+                        class="text-content-gray leading-relaxed text-base sm:text-lg"
+                >
+                    began in 2006 when she was first elected to the Rockport Select Board, where she served for 18
+                    years across six consecutive terms. She chaired the five-member board multiple times, leading it
+                    through some of Rockport's most important decisions. The Select Board serves as the town's
+                    executive branch, responsible for setting direction, proposing budgets, calling town meetings
+                    and elections, serving as the licensing authority, and appointing officials. During her tenure,
+                    Sarah worked on critical infrastructure issues—she was on board when commuter rail service was
+                    restored to Cape Ann after a two-year hiatus. She participated in hundreds of town meetings,
+                    including special sessions that drew upwards of 750 residents to discuss pressing community
+                    issues. Her colleagues consistently reelected her, and she won competitive races against
+                    multiple challengers, demonstrating sustained community support for her leadership. When she
+                    chose not to seek reelection in 2024, Sarah reflected that she had always planned to step down
+                    when she felt the time was right and when Rockport was in a better place than when she started.
+                </Text>
+
+                <!-- Image 4 - After public service section -->
+                <div class="my-6 sm:my-8 animate-fade-in delay-300">
+                    <div class="relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 group max-w-2xl mx-auto">
+                        <Image
+                                src={Image4}
+                                alt="Sarah - Cherished memory"
+                                width={600}
+                                height={450}
+                                class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-500"
         />
       </div>
+                </div>
+
+                <Text
+                        tag="h2"
+                        variant="displayMD"
+                        class="text-navy-blue mt-6 sm:mt-8 mb-3 sm:mb-4 font-serif text-2xl sm:text-3xl lg:text-4xl"
+                >
+                    Beyond her Select Board service,
+                </Text>
+
+                <Text
+                        tag="p"
+                        variant="textBase"
+                        class="text-content-gray leading-relaxed text-base sm:text-lg"
+                >
+                    Sarah has been active across multiple community organizations. She currently serves as Vice
+                    Chair of the Friends of Rockport Athletics and sits on the Board of Directors of the CCB
+                    Foundation. She previously served on the boards of the Sandy Bay Yacht Club and the Sandy Bay
+                    Sailing Program and Scholarship Fund. Sarah lives in Rockport with her husband Greg and their
+                    two sons, who attend the local school district. As a mother of school-age children, she
+                    understands firsthand the challenges facing Cape Ann families, from education funding to economic
+                    opportunity to maintaining the character of these historic coastal communities. Her decision to
+                    run for State Representative came after attending the funeral of Rep. Ann-Margaret Ferrante,
+                    where State Senator Bruce Tarr encouraged attendees to continue Ann-Margaret's legacy of
+                    service. Sarah filed papers to establish her candidate committee in December 2025, making clear
+                    her intention to fight for the fishing industry, jobs and economic development, education, and
+                    ensuring that the towns of Gloucester, Rockport, Essex, and Manchester-by-the-Sea have strong
+                    representation on Beacon Hill.
+                </Text>
+            </div>
+        </section>
     </Wrapper>
-  </section>
-  
-  <Feature1 />
-  <Feature2 />
-  <Feature3 />
-  <Feature4 />
-  <Cta />
+
+    <Feature3/>
 </BaseLayout>
+
+<style>
+    @keyframes fade-in-up {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes slide-in-right {
+        from {
+            opacity: 0;
+            transform: translateX(-50px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    @keyframes slide-in-left {
+        from {
+            opacity: 0;
+            transform: translateX(50px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    @keyframes slide-in-up {
+        from {
+            opacity: 0;
+            transform: translateY(50px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes fade-in {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    .animate-fade-in-up {
+        animation: fade-in-up 0.8s ease-out forwards;
+    }
+
+    .animate-slide-in-right {
+        animation: slide-in-right 0.8s ease-out forwards;
+    }
+
+    .animate-slide-in-left {
+        animation: slide-in-left 0.8s ease-out forwards;
+    }
+
+    .animate-slide-in-up {
+        animation: slide-in-up 0.8s ease-out forwards;
+    }
+
+    .animate-fade-in {
+        animation: fade-in 1s ease-out forwards;
+    }
+
+    .delay-100 {
+        animation-delay: 0.1s;
+        opacity: 0;
+    }
+
+    .delay-200 {
+        animation-delay: 0.2s;
+        opacity: 0;
+    }
+
+    .delay-300 {
+        animation-delay: 0.3s;
+        opacity: 0;
+    }
+
+    .delay-400 {
+        animation-delay: 0.4s;
+        opacity: 0;
+    }
+
+    /* Responsive adjustments for mobile */
+    @media (max-width: 768px) {
+        .animate-slide-in-right,
+        .animate-slide-in-left,
+        .animate-slide-in-up {
+            animation-duration: 0.6s;
+        }
+    }
+
+    /* Smooth scroll behavior */
+    html {
+        scroll-behavior: smooth;
+    }
+</style>

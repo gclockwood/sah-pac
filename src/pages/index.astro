@@ -24,49 +24,47 @@ import Sarah from "@/images/assets/sarah-headshot.jpg";
 ---
 
 <BaseLayout>
-    <Wrapper variant="standard" class="pt-30 pb-8 overflow-hidden lg:pt-50">
-        <section id="hero">
-            <!-- Container -->
-            <div class="relative flex flex-col items-center mx-auto lg:flex-row-reverse lg:max-w-5xl lg:mt-12 xl:max-w-full">
-                <!-- Image Column -->
-                <div class="w-full h-72 lg:w-1/3 lg:h-auto lg:max-w-xs">
+    <Wrapper variant="standard" class="pt-20 pb-20 lg:pt-32">
+        <section id="hero" class="flex flex-col gap-20 md:flex-row items-center justify-between px-8 md:px-12 lg:px-16 xl:px-24">
+            <!-- Text Column -->
+            <div class="flex flex-col items-center md:items-start max-w-xl">
+                <h1 class="text-center md:text-left text-5xl leading-tight md:text-6xl md:leading-[1.2] lg:text-7xl lg:leading-[1.2] font-bold font-serif text-navy-blue">
+                    Sarah Wilkinson for State Representative
+                </h1>
+
+                <p class="text-center md:text-left text-lg md:text-xl text-content-gray max-w-lg mt-6 leading-relaxed">
+                    Running to support Cape Ann as a candidate the Fifth Essex State Representative.
+                </p>
+
+                <div class="flex flex-col sm:flex-row items-center gap-4 mt-8">
+                    <Button
+                        variant="accent"
+                        size="lg"
+                        gap="sm"
+                        href="/#about-sarah"
+                        class="w-full sm:w-auto"
+                    >
+                        Learn About Sarah
+                    </Button>
+                </div>
+            </div>
+            <!-- Close Text Column -->
+
+            <!-- Image Column -->
+            <div class="relative">
+                <div class="relative bg-mid-blue p-8 md:p-10 lg:p-12 shadow-2xl max-w-xs sm:max-w-sm lg:max-w-md transition-all duration-300">
                     <Image
-                            width={2000}
-                            height={2000}
-                            src={Sarah}
-                            alt="#_"
-                            loading="eager"
-                            decoding="async"
-                            class="w-full h-full object-cover"
+                        width={2000}
+                        height={2000}
+                        src={Sarah}
+                        alt="Sarah Wilkinson - Candidate for Fifth Essex State Representative"
+                        loading="eager"
+                        decoding="async"
+                        class="w-full h-auto object-cover shadow-lg"
                     />
                 </div>
-                <!-- Close Image Column -->
-
-                <!-- Text Column -->
-                <div
-                        class="max-w-lg bg-white md:max-w-2xl md:z-10 md:shadow-lg md:absolute md:top-0 md:mt-48 lg:w-3/5 lg:left-0 lg:mt-20 lg:ml-20 xl:mt-24 xl:ml-12">
-                    <!-- Text Wrapper -->
-                    <div class="flex flex-col p-12 md:px-16">
-                        <h2 class="text-2xl font-bold font-serif uppercase text-navy-blue lg:text-4xl">Sarah Wilkinson</h2>
-                        <h3 class="mt-4">
-                            Running to support Cape Ann as a candidate the Fifth Essex State Representative.
-                        </h3>
-                        <!-- Button Container -->
-                        <div class="mt-8">
-                            <Button
-                                variant="accent"
-                                size="base"
-                                href="/#about-sarah"
-                            >
-                                Learn More
-                            </Button>
-                        </div>
-                    </div>
-                    <!-- Close Text Wrapper -->
-                </div>
-                <!-- Close Text Column -->
-
             </div>
+            <!-- Close Image Column -->
         </section>
     </Wrapper>
 
@@ -113,9 +111,7 @@ import Sarah from "@/images/assets/sarah-headshot.jpg";
                     assistance, and event planning. She managed a local inn, worked in an office at Harvard
                     University, and served as Director of a start-up nonprofit organization in Boston before
                     becoming Executive Assistant to a prominent Boston philanthropist. In that role, she managed
-                    multiple properties across Boston, the North Shore, and around the country. Her experience
-                    planning charity, corporate, and personal events for groups ranging from ten to several hundred
-                    people gave her skills in logistics, coordination, and bringing diverse stakeholders together.
+                    multiple properties across Boston, the North Shore, and around the country.
                     Sarah eventually founded Cape Ann Property Services, where she has provided property management
                     and home services to North Shore clients for years.
                 </Text>
@@ -161,9 +157,7 @@ import Sarah from "@/images/assets/sarah-headshot.jpg";
                 >
                     began in 2006 when she was first elected to the Rockport Select Board, where she served for 18
                     years across six consecutive terms. She chaired the five-member board multiple times, leading it
-                    through some of Rockport's most important decisions. The Select Board serves as the town's
-                    executive branch, responsible for setting direction, proposing budgets, calling town meetings
-                    and elections, serving as the licensing authority, and appointing officials. During her tenure,
+                    through some of Rockport's most important decisions.During her tenure,
                     Sarah worked on critical infrastructure issues—she was on board when commuter rail service was
                     restored to Cape Ann after a two-year hiatus. She participated in hundreds of town meetings,
                     including special sessions that drew upwards of 750 residents to discuss pressing community

@@ -4,6 +4,7 @@ const {
   size,
   onlyIconSize,
   gap,
+  href,
   class: className,
   ...rest
 } = Astro.props;
@@ -17,11 +18,11 @@ const defaultClass = [
 ];
 // Accent button
 const accentClass = [
-  "text-white ",
-  "bg-teal-600",
-  "hover:bg-teal-700",
-  "ring-teal-600",
-  "hover:ring-teal-800",
+  "text-black ",
+  "bg-mid-blue",
+  "hover:bg-mid-blue",
+  "ring-mid-blue",
+  "hover:ring-accent-blue",
 ];
 // Muted button
 const mutedClass = [
@@ -44,9 +45,12 @@ const gapBase = ["gap-8"];
 const gapMD = ["gap-10"];
 const gapLG = ["gap-12"];
 const additionalClasses = className ? className.split(" ") : [];
+
+const Tag = href ? 'a' : 'button';
 ---
 
-<button
+<Tag
+  href={href}
   class:list={[
     "flex",
     "text-center",
@@ -82,4 +86,4 @@ const additionalClasses = className ? className.split(" ") : [];
   <slot name="left-icon" />
   <slot />
   <slot name="right-icon" />
-</button>
+</Tag>

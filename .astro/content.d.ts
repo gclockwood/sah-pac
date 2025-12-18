@@ -173,77 +173,7 @@ declare module 'astro:content' {
 	};
 
 	type DataEntryMap = {
-		"changelog": Record<string, {
-  id: string;
-  render(): Render[".md"];
-  slug: string;
-  body: string;
-  collection: "changelog";
-  data: InferEntrySchema<"changelog">;
-  rendered?: RenderedContent;
-  filePath?: string;
-}>;
-"customers": Record<string, {
-  id: string;
-  render(): Render[".md"];
-  slug: string;
-  body: string;
-  collection: "customers";
-  data: InferEntrySchema<"customers">;
-  rendered?: RenderedContent;
-  filePath?: string;
-}>;
-"helpcenter": Record<string, {
-  id: string;
-  render(): Render[".md"];
-  slug: string;
-  body: string;
-  collection: "helpcenter";
-  data: InferEntrySchema<"helpcenter">;
-  rendered?: RenderedContent;
-  filePath?: string;
-}>;
-"infopages": Record<string, {
-  id: string;
-  render(): Render[".md"];
-  slug: string;
-  body: string;
-  collection: "infopages";
-  data: InferEntrySchema<"infopages">;
-  rendered?: RenderedContent;
-  filePath?: string;
-}>;
-"integrations": Record<string, {
-  id: string;
-  render(): Render[".md"];
-  slug: string;
-  body: string;
-  collection: "integrations";
-  data: InferEntrySchema<"integrations">;
-  rendered?: RenderedContent;
-  filePath?: string;
-}>;
-"posts": Record<string, {
-  id: string;
-  render(): Render[".md"];
-  slug: string;
-  body: string;
-  collection: "posts";
-  data: InferEntrySchema<"posts">;
-  rendered?: RenderedContent;
-  filePath?: string;
-}>;
-"team": Record<string, {
-  id: string;
-  render(): Render[".md"];
-  slug: string;
-  body: string;
-  collection: "team";
-  data: InferEntrySchema<"team">;
-  rendered?: RenderedContent;
-  filePath?: string;
-}>;
-
+		
 	};
 
 	type AnyEntryMap = ContentEntryMap & DataEntryMap;
@@ -275,6 +205,6 @@ declare module 'astro:content' {
 		LiveContentConfig['collections'][C]['loader']
 	>;
 
-	export type ContentConfig = typeof import("../src/content/config.js");
+	export type ContentConfig = typeof import("../src/content.config.mjs");
 	export type LiveContentConfig = never;
 }

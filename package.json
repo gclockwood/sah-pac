@@ -1,5 +1,5 @@
 {
-  "name": "@lexington/alfred",
+  "name": "@sah-pac/gclockwood",
   "type": "module",
   "version": "0.0.1",
   "private": true,
@@ -19,6 +19,7 @@
     "@tailwindcss/typography": "^0.5.16",
     "@tailwindcss/vite": "^4.1.13",
     "astro": "^5.13.7",
+    "sharp": "^0.34.5",
     "tailwind-scrollbar-hide": "^4.0.0",
     "tailwindcss": "^4.1.13"
   },
